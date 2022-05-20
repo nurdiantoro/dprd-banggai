@@ -1,15 +1,15 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Index extends CI_Controller
+class Contact extends CI_Controller
 {
 
     public function index()
     {
-        $data['title'] = "Website Resmi DPRD Kabupaten Banggai Laut";
+        $data['title'] = "homepage";
 
         $this->load->view('header', $data);
-        $this->load->view('index');
+        $this->load->view('contact');
         $this->load->view('footer');
     }
 }
