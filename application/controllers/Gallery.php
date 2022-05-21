@@ -6,7 +6,7 @@ class Gallery extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "homepage";
+        $data['title'] = "Gallery";
 
         $this->load->view('header', $data);
         $this->load->view('gallery');

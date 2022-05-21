@@ -6,7 +6,7 @@ class News extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "homepage";
+        $data['title'] = "News";
 
         $this->load->view('header', $data);
         $this->load->view('news');

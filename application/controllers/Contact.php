@@ -6,7 +6,7 @@ class Contact extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "homepage";
+        $data['title'] = "Contact";
 
         $this->load->view('header', $data);
         $this->load->view('contact');

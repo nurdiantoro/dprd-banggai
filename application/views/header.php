@@ -36,95 +36,91 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link <?php if ($title == 'Website Resmi DPRD Kabupaten Banggai Laut') {
+                        <a class="nav-link <?php if (!$this->uri->segment(1)) {
                                                 echo 'active';
                                             } ?>" href="<?= base_url() ?>">Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle <?php if ($title == 'Alat Kelengkapan Dewan') {
+                        <a class="nav-link dropdown-toggle <?php if ($this->uri->segment(1) == 'akd') {
                                                                 echo 'active';
-                                                            } ?>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            AKD
-                        </a>
+                                                            } ?>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">AKD</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
-                                <a class="dropdown-item <?php if ($title == 'Alat Kelengkapan Dewan') {
+                                <a class="dropdown-item <?php if ($this->uri->segment(1) == 'akd' && !$this->uri->segment(2)) {
                                                             echo 'active';
-                                                        } ?>" href="<?= base_url('') ?>akd">
-                                    Alat Kelengkapan Dewan
-                                </a>
+                                                        } ?>" href="<?= base_url('') ?>akd">Alat Kelengkapan Dewan</a>
                             </li>
                             <li>
-                                <a class="dropdown-item <?php if ($title == 'Badan Anggaran') {
+                                <a class="dropdown-item <?php if ($this->uri->segment(2) == 'badanAnggaran') {
                                                             echo 'active';
-                                                        } ?>" href="<?= base_url('') ?>akd/badanAnggaran">
-                                    Badan Anggaran
-                                </a>
+                                                        } ?>" href="<?= base_url('') ?>akd/badanAnggaran">Badan Anggaran</a>
                             </li>
                             <li>
-                                <a class="dropdown-item <?php if ($title == 'Pimpinan DPRD') {
+                                <a class="dropdown-item <?php if ($this->uri->segment(2) == 'pimpinanDprd') {
                                                             echo 'active';
-                                                        } ?>" href="<?= base_url('') ?>akd/pimpinanDprd">
-                                    Pimpinan DPRD
-                                </a>
+                                                        } ?>" href="<?= base_url('') ?>akd/pimpinanDprd">Pimpinan DPRD</a>
                             </li>
-                            <li><a class="dropdown-item <?php if ($title == 'Badan Musyawarah') {
+                            <li>
+                                <a class="dropdown-item <?php if ($this->uri->segment(2) == 'badanMusyawarah') {
                                                             echo 'active';
-                                                        } ?>" href="<?= base_url('') ?>akd/badanMusyawarah">
-                                    Badan Musyawarah
-                                </a>
+                                                        } ?>" href="<?= base_url('') ?>akd/badanMusyawarah">Badan Musyawarah</a>
                             </li>
-                            <li><a class="dropdown-item <?php if ($title == 'BAPPEDA') {
+                            <li>
+                                <a class="dropdown-item <?php if ($this->uri->segment(2) == 'bappeda') {
                                                             echo 'active';
-                                                        } ?>" href="<?= base_url('') ?>akd/bappeda">
-                                    BAPPEDA
-                                </a>
+                                                        } ?>" href="<?= base_url('') ?>akd/bappeda">BAPPEDA</a>
                             </li>
-                            <li><a class="dropdown-item <?php if ($title == 'Komisi I') {
+                            <li>
+                                <a class="dropdown-item <?php if ($this->uri->segment(2) == 'komisi1') {
                                                             echo 'active';
-                                                        } ?>" href="<?= base_url('') ?>akd/komisi1">
-                                    Komisi I
-                                </a>
+                                                        } ?>" href="<?= base_url('') ?>akd/komisi1">Komisi I</a>
                             </li>
-                            <li><a class="dropdown-item <?php if ($title == 'Komisi II') {
+                            <li>
+                                <a class="dropdown-item <?php if ($this->uri->segment(2) == 'komisi2') {
                                                             echo 'active';
-                                                        } ?>" href="<?= base_url('') ?>akd/komisi2">
-                                    Komisi II
-                                </a>
+                                                        } ?>" href="<?= base_url('') ?>akd/komisi2">Komisi II</a>
                             </li>
-                            <li><a class="dropdown-item <?php if ($title == 'Komisi III') {
+                            <li>
+                                <a class="dropdown-item <?php if ($this->uri->segment(2) == 'komisi3') {
                                                             echo 'active';
-                                                        } ?>" href="<?= base_url('') ?>akd/komisi3">
-                                    Komisi III
-                                </a>
+                                                        } ?>" href="<?= base_url('') ?>akd/komisi3">Komisi III</a>
                             </li>
-                            <li><a class="dropdown-item <?php if ($title == 'Komisi IV') {
+                            <li>
+                                <a class="dropdown-item <?php if ($this->uri->segment(2) == 'komisi4') {
                                                             echo 'active';
-                                                        } ?>" href="<?= base_url('') ?>akd/komisi4">
-                                    Komisi IV
-                                </a>
+                                                        } ?>" href="<?= base_url('') ?>akd/komisi4">Komisi IV</a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('') ?>news">News</a>
+                        <a class="nav-link <?php if ($this->uri->segment(1) == 'news') {
+                                                echo 'active';
+                                            } ?>" href="<?= base_url('') ?>news">News</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php if ($title == 'e-Document') {
+                        <a class="nav-link <?php if ($this->uri->segment(1) == 'eDocument') {
                                                 echo 'active';
                                             } ?>" href="<?= base_url('') ?>eDocument">e-Document</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('') ?>agenda">Agenda</a>
+                        <a class="nav-link <?php if ($this->uri->segment(1) == 'agenda') {
+                                                echo 'active';
+                                            } ?>" href="<?= base_url('') ?>agenda">Agenda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('') ?>gallery">Gallery</a>
+                        <a class="nav-link <?php if ($this->uri->segment(1) == 'gallery') {
+                                                echo 'active';
+                                            } ?>" href="<?= base_url('') ?>gallery">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('') ?>tentang">Tentang</a>
+                        <a class="nav-link <?php if ($this->uri->segment(1) == 'tentang') {
+                                                echo 'active';
+                                            } ?>" href="<?= base_url('') ?>tentang">Tentang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('') ?>contact">Contact Us</a>
+                        <a class="nav-link <?php if ($this->uri->segment(1) == 'contact') {
+                                                echo 'active';
+                                            } ?>" href="<?= base_url('') ?>contact">Contact Us</a>
                     </li>
                 </ul>
             </div>

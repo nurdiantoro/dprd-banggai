@@ -6,7 +6,7 @@ class Agenda extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "homepage";
+        $data['title'] = "Agenda";
 
         $this->load->view('header', $data);
         $this->load->view('agenda');

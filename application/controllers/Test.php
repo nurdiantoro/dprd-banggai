@@ -1,15 +1,15 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Tentang extends CI_Controller
+class Test extends CI_Controller
 {
 
     public function index()
     {
-        $data['title'] = "Tentang DPRD Kabupaten Banggai Laut";
+        $data['title'] = "INI CUMA TEST";
 
         $this->load->view('header', $data);
-        $this->load->view('tentang');
+        $this->load->view('test');
         $this->load->view('footer');
     }
 }
