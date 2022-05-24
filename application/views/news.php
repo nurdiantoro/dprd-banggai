@@ -10,7 +10,9 @@
                         <div class="card-content">
                             <span class="tanggal">19 Januari 2022</span>
                             <p class="judul">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem iste tempora quod cumque saepe voluptatum unde recusandae dolorum animi aut, placeat aliquid quia illum impedit obcaecati vitae hic accusamus ratione.
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem iste tempora quod cumque
+                                saepe voluptatum unde recusandae dolorum animi aut, placeat aliquid quia illum impedit
+                                obcaecati vitae hic accusamus ratione.
                             </p>
                         </div>
                     </div>
@@ -54,62 +56,33 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <a href="">
+                    <?php
+                    $index = 0;
+                    while ($index < 10) {
+                        $index++;
+                        echo ''
+                    ?>
+                        <div class="col-md-4 mb-3">
                             <div class="card-news card-news-sm">
-                                <div class="background-wrapper" style="background-image: url('assets/img/image-1.png') ;">
-                                </div>
-                                <div class="card-content">
-                                    <span class="tanggal">19 Januari 2022</span>
-                                    <p class="judul">
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    </p>
-                                </div>
+                                <a href="">
+                                    <div class="background-wrapper" href="" style="background-image: url('assets/img/image-1.png') ;">
+                                    </div>
+                                    <div class="card-content">
+                                        <span class="tanggal">19 Januari 2022</span>
+                                        <p class="judul">
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                        </p>
+                                    </div>
+                                </a>
+                                <ul class="sharing-list">
+                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa-solid fa-link"></i></i></a></li>
+                                </ul>
                             </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <a href="">
-                            <div class="card-news card-news-sm">
-                                <div class="background-wrapper" style="background-image: url('assets/img/image-1.png') ;">
-                                </div>
-                                <div class="card-content">
-                                    <span class="tanggal">19 Januari 2022</span>
-                                    <p class="judul">
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <a href="">
-                            <div class="card-news card-news-sm">
-                                <div class="background-wrapper" style="background-image: url('assets/img/image-1.png') ;">
-                                </div>
-                                <div class="card-content">
-                                    <span class="tanggal">19 Januari 2022</span>
-                                    <p class="judul">
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <a href="">
-                            <div class="card-news card-news-sm">
-                                <div class="background-wrapper" style="background-image: url('assets/img/image-1.png') ;">
-                                </div>
-                                <div class="card-content">
-                                    <span class="tanggal">19 Januari 2022</span>
-                                    <p class="judul">
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
             <div class="col-md-3">

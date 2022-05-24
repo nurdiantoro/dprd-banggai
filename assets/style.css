@@ -136,6 +136,11 @@ button.active .icon-akd-8 {
 	transition: 1000ms ease;
 }
 
+.card-news a{
+	height: 100%;
+	width: 100%;
+}
+
 .card-news-lg .judul {
 	font-size: 1em;
 }
@@ -162,6 +167,9 @@ button.active .icon-akd-8 {
 .card-news:hover {
 	box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6);
 }
+.card-news:hover ul.sharing-list {
+	top: 0;
+}
 
 .card-news:hover .background-wrapper {
 	transform: scale(1.1);
@@ -169,6 +177,24 @@ button.active .icon-akd-8 {
 
 .card-news img {
 	transition: 300ms ease;
+}
+
+.card-news ul.sharing-list {
+	position: absolute;
+	top: -3em;
+	display: flex;
+	flex-direction: row;
+	background-color: rgba(0,0,0,0.5);
+	transition: 300ms;
+}
+.card-news ul.sharing-list li{
+	padding: 0.5em;
+}
+.card-news ul.sharing-list li a{
+	color: rgba(255, 255, 255, 0.5);
+}
+.card-news ul.sharing-list li a:hover{
+	color: var(--white-100);
 }
 
 .card-news .card-content {
@@ -198,6 +224,7 @@ button.active .icon-akd-8 {
 	color: var(--warna-01);
 	position: relative;
 }
+
 .read-more:hover {
 	color: var(--warna-01);
 }
@@ -253,14 +280,14 @@ button.active .icon-akd-8 {
 	color: var(--white-100);
 }
 
-.modal .btn-close{
+.modal .btn-close {
 	position: absolute;
 	right: 1em;
 	top: 1em;
 	background-color: var(--white-100);
 }
 
-.modal .modal-image{
+.modal .modal-image {
 	background-color: var(--white-100);
 }
 
@@ -368,6 +395,7 @@ button.active .icon-akd-8 {
 	background-color: var(--white-100) !important;
 	color: var(--warna-01) !important;
 }
+
 .dropdown-item:focus {
 	background-color: var(--white-90) !important;
 }
@@ -652,30 +680,33 @@ button.active .icon-akd-8 {
 }
 
 /* ------------------------------Gallery------------------------------ */
-#gallery{
+#gallery {
 	padding-top: 100px;
 	padding-bottom: 100px;
 	background-color: var(--white-90);
 }
-#gallery .album a{
+
+#gallery .album a {
 	color: var(--black-90);
 }
-#gallery .album a:hover{
+
+#gallery .album a:hover {
 	color: var(--warna-01);
 }
-#gallery .album li{
+
+#gallery .album li {
 	display: inline;
 	padding-right: 2em;
 }
 
 /* ------------------------------Tentang------------------------------ */
-#tentang{
+#tentang {
 	padding-top: 100px;
 	padding-bottom: 100px;
 	background-color: var(--white-90);
 }
 
-#tentang #visi-misi{
+#tentang #visi-misi {
 	background-image: url('img/background-1.png');
 	background-size: cover;
 	background-position: center;
@@ -683,7 +714,7 @@ button.active .icon-akd-8 {
 	padding-bottom: 100px;
 }
 
-#tentang .visi-misi{
+#tentang .visi-misi {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -694,7 +725,7 @@ button.active .icon-akd-8 {
 	position: relative;
 }
 
-#tentang .visi-misi::before{
+#tentang .visi-misi::before {
 	content: '';
 	position: absolute;
 	left: 50%;
@@ -703,28 +734,30 @@ button.active .icon-akd-8 {
 	width: 0.05em;
 	background-color: var(--warna-01);
 }
-#tentang .visi-misi p{
+
+#tentang .visi-misi p {
 	font-weight: var(--bold);
 }
+
 #tentang .visi,
-#tentang .misi{
+#tentang .misi {
 	width: 50%;
 }
 
-#tentang .visi{
+#tentang .visi {
 	padding-right: 2em;
 }
 
-#tentang .misi{
+#tentang .misi {
 	padding-left: 2em;
 }
 
-#tentang #e-aspirasi{
+#tentang #e-aspirasi {
 	padding-top: 100px;
 	padding-bottom: 100px;
 }
 
-#tentang .form-aspirasi{
+#tentang .form-aspirasi {
 	background-color: var(--white-100);
 	border-radius: 1em;
 	border: solid 0.1em var(--warna-01);
@@ -733,8 +766,9 @@ button.active .icon-akd-8 {
 	padding: 2em;
 	box-shadow: 2px 10px 25px rgba(0, 0, 0, 0.15);
 }
+
 #tentang .form-aspirasi input,
-#tentang .form-aspirasi textarea{
+#tentang .form-aspirasi textarea {
 	padding: 0.75em;
 	border: none;
 	background-color: var(--white-90);
@@ -745,12 +779,13 @@ button.active .icon-akd-8 {
 }
 
 #tentang .form-aspirasi input:focus,
-#tentang .form-aspirasi textarea:focus{
+#tentang .form-aspirasi textarea:focus {
 	outline: none;
 	box-shadow: 0.2em 0.2em 0em var(--warna-01);
 }
 
-#tentang .btn-kirim{
+#tentang .btn-kirim,
+#contact .btn-kirim {
 	background-color: var(--warna-01);
 	padding: 0.5em 2em;
 	color: var(--white-100);
@@ -760,6 +795,69 @@ button.active .icon-akd-8 {
 	margin-left: auto;
 	display: block;
 }
+
+/* ------------------------------Footer------------------------------ */
+#contact {
+	background-color: var(--white-90);
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+#contact .sidebar-contact {
+	border-radius: 0.5em;
+	padding: 1em;
+	/* background-color: var(--white-100); */
+	/* box-shadow: 2px 6px 16px rgba(0, 0, 0, 0.1); */
+}
+
+#contact .sidebar-contact iframe {
+	box-shadow: 2px 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+#contact .contact-list * {
+	padding: 0.2em;
+}
+
+#contact .contact-list a,
+#contact .contact-list i {
+	color: var(--black-30);
+}
+
+#contact .contact-list a:hover {
+	color: var(--warna-01)
+}
+
+#contact .contact-form {
+	background-color: var(--white-100);
+	border-radius: 1em;
+	border: solid 0.1em var(--warna-01);
+	width: 100%;
+	/* height: 100%; */
+	padding: 2em;
+	box-shadow: 2px 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+#contact .contact-form input,
+#contact .contact-form textarea {
+	padding: 0.75em;
+	border: none;
+	background-color: var(--white-90);
+	border-radius: 0.5em;
+	width: 100%;
+	box-shadow: 0em 0em 0em var(--warna-01);
+	transition: 500ms;
+}
+
+#contact .contact-form textarea {
+	height: 100%;
+}
+
+#contact .contact-form input:focus,
+#contact .contact-form textarea:focus {
+	outline: none;
+	box-shadow: 0.2em 0.2em 0em var(--warna-01);
+}
+
 /* ------------------------------Footer------------------------------ */
 
 #footer {
@@ -767,6 +865,7 @@ button.active .icon-akd-8 {
 	position: relative;
 	color: var(--white-100);
 	padding-top: 150px;
+	padding-bottom: 50px;
 }
 
 #footer::before {
@@ -775,6 +874,27 @@ button.active .icon-akd-8 {
 	height: auto;
 	position: absolute;
 	top: -1px;
+}
+
+#footer .footer-navigasi {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+#footer .list-navigasi {
+	max-width: 30%;
+}
+
+#footer .list-navigasi h5 {
+	margin-bottom: 1em;
+}
+
+#footer .list-navigasi .social-media {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 #footer li a {
