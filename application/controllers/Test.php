@@ -8,8 +8,10 @@ class Test extends CI_Controller
     {
         $data['title'] = "INI CUMA TEST";
 
-        $this->load->view('header', $data);
-        $this->load->view('test');
-        $this->load->view('footer');
+        // $this->load->view('header', $data);
+        // $this->load->view('test');
+        // $this->load->view('footer');
+        setlocale(LC_ALL, 'IND');
+        echo strftime('%d %B %Y');
     }
 }
