@@ -13,6 +13,12 @@ class Model_akdteam extends CI_Model
         $query = $this->db->get('akdteam');
         return $query->result();
     }
+    public function readKategori($kategori)
+    {
+        $this->db->where('kategori', $kategori);
+        $query = $this->db->get('akdteam');
+        return $query->result();
+    }
     public function tambah($data)
     {
         $this->db->insert('akdteam', $data);

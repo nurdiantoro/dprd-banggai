@@ -14,6 +14,12 @@ class Model_news extends CI_Model
         $query = $this->db->get('news');
         return $query->result();
     }
+    public function readLimit($limit)
+    {
+        $this->db->order_by('rand()');
+        $query = $this->db->get('news', $limit);
+        return $query->result();
+    }
     public function tambah($data)
     {
         $this->db->insert('news', $data);

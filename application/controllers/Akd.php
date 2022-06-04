@@ -16,6 +16,8 @@ class Akd extends CI_Controller
 
     public function badanAnggaran()
     {
+        $data['akdpages'] = $this->model_akdpage->read(1);
+        $data['akdteams'] = $this->model_akdteam->readKategori('Badan Anggaran');
         $data['title'] = "Badan Anggaran";
         $data['akdList'] = "badanAnggaran";
 
@@ -25,6 +27,8 @@ class Akd extends CI_Controller
     }
     public function pimpinanDprd()
     {
+        $data['akdpages'] = $this->model_akdpage->read(1);
+        $data['akdteams'] = $this->model_akdteam->readKategori('Pimpinan DPRD');
         $data['title'] = "Pimpinan DPRD";
         $data['akdList'] = "pimpinanDprd";
 
@@ -35,6 +39,8 @@ class Akd extends CI_Controller
 
     public function badanMusyawarah()
     {
+        $data['akdpages'] = $this->model_akdpage->read(1);
+        $data['akdteams'] = $this->model_akdteam->readKategori('Badan Musyawarah');
         $data['title'] = "Badan Musyawarah";
         $data['akdList'] = "badanMusyawarah";
 
@@ -45,6 +51,8 @@ class Akd extends CI_Controller
 
     public function bappeda()
     {
+        $data['akdpages'] = $this->model_akdpage->read(1);
+        $data['akdteams'] = $this->model_akdteam->readKategori('BAPPEDA');
         $data['title'] = "BAPPEDA";
         $data['akdList'] = "bappeda";
 
@@ -55,6 +63,8 @@ class Akd extends CI_Controller
 
     public function komisi1()
     {
+        $data['akdpages'] = $this->model_akdpage->read(1);
+        $data['akdteams'] = $this->model_akdteam->readKategori('Komisi I');
         $data['title'] = "Komisi I";
         $data['akdList'] = "komisi1";
 
@@ -65,6 +75,8 @@ class Akd extends CI_Controller
 
     public function komisi2()
     {
+        $data['akdpages'] = $this->model_akdpage->read(1);
+        $data['akdteams'] = $this->model_akdteam->readKategori('Komisi II');
         $data['title'] = "Komisi II";
         $data['akdList'] = "komisi2";
 
@@ -75,6 +87,8 @@ class Akd extends CI_Controller
 
     public function komisi3()
     {
+        $data['akdpages'] = $this->model_akdpage->read(1);
+        $data['akdteams'] = $this->model_akdteam->readKategori('Komisi III');
         $data['title'] = "Komisi III";
         $data['akdList'] = "komisi3";
 
@@ -85,6 +99,8 @@ class Akd extends CI_Controller
 
     public function komisi4()
     {
+        $data['akdpages'] = $this->model_akdpage->read(1);
+        $data['akdteams'] = $this->model_akdteam->readKategori('Komisi IV');
         $data['title'] = "Komisi IV";
         $data['akdList'] = "komisi4";
 

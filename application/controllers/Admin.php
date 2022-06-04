@@ -58,6 +58,7 @@ class Admin extends CI_Controller
     public function news($id)
     {
         if ($id == 'all') {
+            $data['newsPages'] = $this->model_newspage->read(1);
             $data['newses'] = $this->model_news->readAll();
             $data['title'] = "Backend - news";
             $this->load->view('backend/header', $data);
@@ -212,7 +213,7 @@ class Admin extends CI_Controller
         if ($this->upload->do_upload('banner')) {
             $data = array(
                 'judul' => $this->input->post('judul'),
-                'tanggal' => date("Y-m-d", time()),
+                'tanggal' => $this->input->post('tanggal'),
                 'banner' => $this->upload->data('file_name'),
                 'isi' => $this->input->post('isi'),
             );
@@ -367,6 +368,37 @@ class Admin extends CI_Controller
         $this->model_news->edit($id, $data);
         redirect(base_url('admin/news/all'));
     }
+    public function editNewsPage($id)
+    {
+        $config['upload_path'] = './assets/img/news';
+        $config['allowed_types'] = 'jpeg|jpg|png';
+        $config['max_size'] = 2000;
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('banner')) {
+            // $error = array('error' => $this->upload->display_errors());
+            // var_dump($error);
+            // die;
+        }
+        // Cek image diubah atau engga
+        // Kalau engga, tetep pakai yang lama
+        if ($this->upload->data('file_name') == null) {
+            $banner = $this->input->post('banner-lama');
+        } else {
+            $banner = $this->upload->data('file_name');
+        }
+
+        $data = array(
+            'banner' => $banner,
+            'youtube' => $this->input->post('youtube'),
+            'berita_utama1' => $this->input->post('berita_utama1'),
+            'berita_utama2' => $this->input->post('berita_utama2'),
+            'berita_utama3' => $this->input->post('berita_utama3'),
+        );
+
+        $this->model_newspage->edit($id, $data);
+        redirect(base_url('admin/news/all'));
+    }
 
     public function editEdocument($id)
     {
@@ -438,6 +470,23 @@ class Admin extends CI_Controller
             'banner' => $banner,
             'deskripsi' => $this->input->post('deskripsi'),
             'image' => $image,
+        );
+
+        $this->model_akdpage->edit($id, $data);
+        redirect(base_url('admin/akd/all'));
+    }
+    public function editAkddeskripsi($id)
+    {
+
+        $data = array(
+            'deskripsi_badanAnggaran' => $this->input->post('deskripsi_badanAnggaran'),
+            'deskripsi_pimpinanDprd' => $this->input->post('deskripsi_pimpinanDprd'),
+            'deskripsi_badanMusyawarah' => $this->input->post('deskripsi_badanMusyawarah'),
+            'deskripsi_bappeda' => $this->input->post('deskripsi_bappeda'),
+            'deskripsi_komisi1' => $this->input->post('deskripsi_komisi1'),
+            'deskripsi_komisi2' => $this->input->post('deskripsi_komisi2'),
+            'deskripsi_komisi3' => $this->input->post('deskripsi_komisi3'),
+            'deskripsi_komisi4' => $this->input->post('deskripsi_komisi4'),
         );
 
         $this->model_akdpage->edit($id, $data);

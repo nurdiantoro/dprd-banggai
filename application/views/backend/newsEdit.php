@@ -37,7 +37,8 @@ foreach ($newses as $news) {
                     <td>Isi</td>
                     <td>:</td>
                     <td>
-                        <textarea class="form-control" rows="3" name="isi"><?= $news->isi ?></textarea>
+                        <textarea class="form-control" rows="15" name="isi"><?= $news->isi ?></textarea>
+                        <small class="text-danger">*ketik &lt;br&gt; untuk Enter </small>
                     </td>
                 </tr>
                 <tr align="right">

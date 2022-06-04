@@ -1,3 +1,7 @@
+<?php
+foreach ($newsPages as $newsPage) {
+} ?>
+
 <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">News</h6>
@@ -15,7 +19,6 @@
                 </thead>
                 <tbody>
                     <?php
-                    setlocale(LC_ALL, 'IND');
                     foreach ($newses as $news) { ?>
                         <tr>
                             <td><?= $news->judul ?></td>
@@ -28,6 +31,101 @@
                     <?php } ?>
                 </tbody>
             </table>
+        </div>
+    </div>
+</div>
+<div class="row" id="news">
+    <div class="col-md-9">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">News Page Setting</h6>
+            </div>
+            <div class="card-body">
+                <form action="<?= base_url('admin/editNewsPage/1') ?>" method="POST" enctype="multipart/form-data">
+                    <table class="" width="100%" cellspacing="0">
+                        <tr>
+                            <td>Berita Utama 1</td>
+                            <td>:</td>
+                            <td>
+                                <select id="select-state" placeholder="Pilih Berita" name="berita_utama1">
+                                    <?php if ($newsPage->berita_utama1 == null) { ?>
+                                        <option value="">Select a state...</option>
+                                    <?php } else { ?>
+                                        <option value="<?= $newsPage->berita_utama1 ?>"><?= $newsPage->berita_utama1 ?></option>
+                                    <?php } ?>
+                                    <?php foreach ($newses as $news) { ?>
+                                        <option value="<?= $news->judul ?>"><?= $news->judul ?></option>
+                                    <?php } ?>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Berita Utama 2</td>
+                            <td>:</td>
+                            <td>
+                                <select id="select-state" placeholder="Pilih Berita" name="berita_utama2">
+                                    <?php if ($newsPage->berita_utama2 == null) { ?>
+                                        <option value="">Select a state...</option>
+                                    <?php } else { ?>
+                                        <option value="<?= $newsPage->berita_utama2 ?>"><?= $newsPage->berita_utama2 ?></option>
+                                    <?php } ?>
+                                    <?php foreach ($newses as $news) { ?>
+                                        <option value="<?= $news->judul ?>"><?= $news->judul ?></option>
+                                    <?php } ?>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Berita Utama 3</td>
+                            <td>:</td>
+                            <td>
+                                <select id="select-state" placeholder="Pilih Berita" name="berita_utama3">
+                                    <?php if ($newsPage->berita_utama3 == null) { ?>
+                                        <option value="">Select a state...</option>
+                                    <?php } else { ?>
+                                        <option value="<?= $newsPage->berita_utama3 ?>"><?= $newsPage->berita_utama3 ?></option>
+                                    <?php } ?>
+                                    <?php foreach ($newses as $news) { ?>
+                                        <option value="<?= $news->judul ?>"><?= $news->judul ?></option>
+                                    <?php } ?>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Banner</th>
+                            <th>: </th>
+                            <th>
+                                <input type="file" class="form-control" name="banner" value="<?= $newsPage->banner ?>">
+                                <input type="hidden" class="form-control" name="banner-lama" value="<?= $newsPage->banner ?>">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Youtube</th>
+                            <th>: </th>
+                            <th><input type="text" class="form-control" name="youtube" value="<?= $newsPage->youtube ?>" placeholder="Masukan iframe youtube"></th>
+                        </tr>
+                    </table>
+                    <button class="btn btn-primary text-center ml-auto mt-2 d-block" type="submit">Simpan</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-header">
+                News Sidebar Preview
+            </div>
+            <div class="news-sidebar">
+                <div class="news-sidebar-banner my-3">
+                    <img src="<?= base_url('assets/img/news/') . $newsPage->banner ?>" class="img-fluid">
+                </div>
+                <div class="news-sidebar-title">
+                    Youtube
+                    <iframe src="https://www.youtube.com/embed/<?= $newsPage->youtube ?>" class="img-fluid"></iframe>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -75,5 +173,12 @@
     // Datatables
     $(document).ready(function() {
         $('#dataTable').DataTable();
+    });
+
+    // Selectize
+    $(document).ready(function() {
+        $('select').selectize({
+            sortField: 'text'
+        });
     });
 </script>

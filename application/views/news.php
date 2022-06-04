@@ -1,3 +1,6 @@
+<?php foreach ($newsPages as $newsPage) {
+} ?>
+
 <div id="news">
     <div class="container">
         <h1 class="warna-01 text-center">BERITA UTAMA</h1>
@@ -52,25 +55,22 @@
             </div>
         </div>
 
-        <h2 class="warna-01">BERITA LAINNYA</h2>
+        <h2 class="warna-01">BERITA TERBARU</h2>
         <div class="row">
             <div class="col-md-9">
                 <div class="row">
                     <?php
-                    $index = 0;
-                    while ($index < 10) {
-                        $index++;
-                        echo ''
+                    foreach ($newses as $news) {
                     ?>
                         <div class="col-md-4 mb-3">
                             <div class="card-news card-news-sm">
-                                <a href="">
-                                    <div class="background-wrapper" href="" style="background-image: url('assets/img/image-1.png') ;">
+                                <a href="<?= base_url('news/detail/') . $news->id ?>">
+                                    <div class="background-wrapper" href="" style="background-image: url('assets/img/news/<?= $news->banner ?>') ;">
                                     </div>
                                     <div class="card-content">
-                                        <span class="tanggal">19 Januari 2022</span>
+                                        <span class="tanggal"><?= date_format(new DateTime($news->tanggal), 'd F Y'); ?></span>
                                         <p class="judul">
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                            <?= $news->judul ?>
                                         </p>
                                     </div>
                                 </a>
@@ -88,53 +88,22 @@
             <div class="col-md-3">
                 <div class="news-sidebar">
                     <div class="news-sidebar-title">
-                        Berita Terbaru
+                        Berita Lainnya
                     </div>
                     <div class="news-sidebar-list">
-                        <a class="news-sidebar-card" href="#">
-                            <div class="news-sidebar-card-img">
-                                <img class="img-fluid" src="<?= base_url() ?>assets/img/image-3.png" alt="">
-                            </div>
-                            <div class="news-sidebar-card-title">
-                                <label class="warna-01">19 Januari 2021</label>
-                                <label>
-                                    Arus Balik Lebaran 2022: Hampir 2 Juta Kendaraan Diprediksi...
-                                </label>
-                            </div>
-                        </a>
-                        <a class="news-sidebar-card" href="#">
-                            <div class="news-sidebar-card-img">
-                                <img class="img-fluid" src="<?= base_url() ?>assets/img/image-3.png" alt="">
-                            </div>
-                            <div class="news-sidebar-card-title">
-                                <label class="warna-01">19 Januari 2021</label>
-                                <label>
-                                    Arus Balik Lebaran 2022: Hampir 2 Juta Kendaraan Diprediksi...
-                                </label>
-                            </div>
-                        </a>
-                        <a class="news-sidebar-card" href="#">
-                            <div class="news-sidebar-card-img">
-                                <img class="img-fluid" src="<?= base_url() ?>assets/img/image-3.png" alt="">
-                            </div>
-                            <div class="news-sidebar-card-title">
-                                <label class="warna-01">19 Januari 2021</label>
-                                <label>
-                                    Arus Balik Lebaran 2022: Hampir 2 Juta Kendaraan Diprediksi...
-                                </label>
-                            </div>
-                        </a>
-                        <a class="news-sidebar-card" href="#">
-                            <div class="news-sidebar-card-img">
-                                <img class="img-fluid" src="<?= base_url() ?>assets/img/image-3.png" alt="">
-                            </div>
-                            <div class="news-sidebar-card-title">
-                                <label class="warna-01">19 Januari 2021</label>
-                                <label>
-                                    Arus Balik Lebaran 2022: Hampir 2 Juta Kendaraan Diprediksi...
-                                </label>
-                            </div>
-                        </a>
+                        <?php foreach ($newsesLainnya as $newsLainnya) { ?>
+                            <a class="news-sidebar-card" href="<?= base_url('news/detail/') . $newsLainnya->id ?>">
+                                <div class="news-sidebar-card-img">
+                                    <img class="img-fluid" src="<?= base_url() ?>assets/img/news/<?= $newsLainnya->banner ?>" alt="">
+                                </div>
+                                <div class="news-sidebar-card-title">
+                                    <label class="warna-01"><?= date_format(new DateTime($newsLainnya->tanggal), 'd F Y'); ?></label>
+                                    <label>
+                                        <?= $newsLainnya->judul ?>
+                                    </label>
+                                </div>
+                            </a>
+                        <?php } ?>
                     </div>
                     <div class="news-sidebar-banner my-3">
                         <img src="<?= base_url() ?>assets/img/banner-01.png" class="img-fluid">

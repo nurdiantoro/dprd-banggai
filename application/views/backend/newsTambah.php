@@ -11,6 +11,13 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>Tanggal</td>
+                    <td>:</td>
+                    <td>
+                        <input type="date" class="form-control" name="tanggal">
+                    </td>
+                </tr>
+                <tr>
                     <td>Banner</td>
                     <td>:</td>
                     <td>
@@ -22,7 +29,8 @@
                     <td>Isi</td>
                     <td>:</td>
                     <td>
-                        <textarea class="form-control" rows="3" name="isi"></textarea>
+                        <textarea class="form-control" rows="15" name="isi"></textarea>
+                        <small class="text-danger">*ketik &lt;br&gt; untuk Enter </small>
                     </td>
                 </tr>
                 <tr align="right">

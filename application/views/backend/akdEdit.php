@@ -1,5 +1,28 @@
-<?php foreach ($akdteams as $akdteam) {
-} ?>
+<?php
+foreach ($akdteams as $akdteam) {
+}
+
+$kosong = $badanAnggaran = $pimpinanDprd = $badanMusyawarah = $bappeda = $komisi1 = $komisi2 = $komisi3 = $komisi4 = '';
+if ($akdteam->kategori == '') {
+    $kosong = 'selected';
+} elseif ($akdteam->kategori == 'Badan Anggaran') {
+    $badanAnggaran = 'selected';
+} elseif ($akdteam->kategori == 'Pimpinan DPRD') {
+    $pimpinanDprd = 'selected';
+} elseif ($akdteam->kategori == 'Badan Musyawarah') {
+    $badanMusyawarah = 'selected';
+} elseif ($akdteam->kategori == 'BAPPEDA') {
+    $bappeda = 'selected';
+} elseif ($akdteam->kategori == 'Komisi I') {
+    $komisi1 = 'selected';
+} elseif ($akdteam->kategori == 'Komisi II') {
+    $komisi2 = 'selected';
+} elseif ($akdteam->kategori == 'Komisi III') {
+    $komisi3 = 'selected';
+} elseif ($akdteam->kategori == 'Komisi IV') {
+    $komisi4 = 'selected';
+}
+?>
 <div class="card">
     <div class="card-header">Tambah Team</div>
     <div class="card-body">
@@ -33,15 +56,15 @@
                     <td>:</td>
                     <td>
                         <select class="form-control" name="kategori">
-                            <option selected disabled value="<?= $akdteam->kategori ?>"><?= $akdteam->kategori ?></option>
-                            <option value="Badan Anggaran">Badan Anggaran</option>
-                            <option value="Pimpinan DPRD">Pimpinan DPRD</option>
-                            <option value="Badan Musyawarah">Badan Musyawarah</option>
-                            <option value="BAPPEDA">BAPPEDA</option>
-                            <option value="Komisi I">Komisi I</option>
-                            <option value="Komisi II">Komisi II</option>
-                            <option value="Komisi III">Komisi III</option>
-                            <option value="Komisi IV">Komisi IV</option>
+                            <option <?= $kosong ?> value="" disabled></option>
+                            <option <?= $badanAnggaran ?> value="Badan Anggaran">Badan Anggaran</option>
+                            <option <?= $pimpinanDprd ?> value="Pimpinan DPRD">Pimpinan DPRD</option>
+                            <option <?= $badanMusyawarah ?> value="Badan Musyawarah">Badan Musyawarah</option>
+                            <option <?= $bappeda ?> value="BAPPEDA">BAPPEDA</option>
+                            <option <?= $komisi1 ?> value="Komisi I">Komisi I</option>
+                            <option <?= $komisi2 ?> value="Komisi II">Komisi II</option>
+                            <option <?= $komisi3 ?> value="Komisi III">Komisi III</option>
+                            <option <?= $komisi4 ?> value="Komisi IV">Komisi IV</option>
                         </select>
                     </td>
                 </tr>

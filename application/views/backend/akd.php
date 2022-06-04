@@ -37,7 +37,7 @@
 <!-- Page Form -->
 <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex justify-content-between">
-        <h6 class="m-0 font-weight-bold text-primary">Homepage</h6>
+        <h6 class="m-0 font-weight-bold text-primary">AKD</h6>
     </div>
     <div class="card-body">
         <form action="<?= base_url('admin/editAkdpage/1') ?>" method="POST" enctype="multipart/form-data">
@@ -64,6 +64,87 @@
                     <td>
                         <input class="form-control" type="file" name="image">
                         <input class="form-control" type="hidden" name="image-lama" value="<?= $akdpage->image ?>">
+                    </td>
+                </tr>
+            </table>
+
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <button class="btn btn-primary w-50 text-center mx-auto d-block" type="submit">Simpan</button>
+        </form>
+    </div>
+</div>
+
+<!-- Page Form -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">Deskripsi</h6>
+    </div>
+    <div class="card-body">
+        <form action="<?= base_url('admin/editAkddeskripsi/1') ?>" method="POST" enctype="multipart/form-data">
+            <table class="w-100">
+                <tr>
+                    <td style="width: 20%;">Deskripsi Badan Anggaran</td>
+                    <td>:</td>
+                    <td>
+                        <textarea rows="5" class="form-control" name="deskripsi_badanAnggaran"><?= $akdpage->deskripsi_badanAnggaran ?></textarea>
+                        <small class="text-danger">*ketik &lt;br&gt; untuk Enter</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Deskripsi Pimpinan DPRD</td>
+                    <td>:</td>
+                    <td>
+                        <textarea rows="5" class="form-control" name="deskripsi_pimpinanDprd"><?= $akdpage->deskripsi_pimpinanDprd ?></textarea>
+                        <small class="text-danger">*ketik &lt;br&gt; untuk Enter</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Deskripsi Badan Musyawarah</td>
+                    <td>:</td>
+                    <td>
+                        <textarea rows="5" class="form-control" name="deskripsi_badanMusyawarah"><?= $akdpage->deskripsi_badanMusyawarah ?></textarea>
+                        <small class="text-danger">*ketik &lt;br&gt; untuk Enter</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Deskripsi BAPPEDA</td>
+                    <td>:</td>
+                    <td>
+                        <textarea rows="5" class="form-control" name="deskripsi_bappeda"><?= $akdpage->deskripsi_bappeda ?></textarea>
+                        <small class="text-danger">*ketik &lt;br&gt; untuk Enter</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Deskripsi Komisi I</td>
+                    <td>:</td>
+                    <td>
+                        <textarea rows="5" class="form-control" name="deskripsi_komisi1"><?= $akdpage->deskripsi_komisi1 ?></textarea>
+                        <small class="text-danger">*ketik &lt;br&gt; untuk Enter</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Deskripsi Komisi II</td>
+                    <td>:</td>
+                    <td>
+                        <textarea rows="5" class="form-control" name="deskripsi_komisi2"><?= $akdpage->deskripsi_komisi2 ?></textarea>
+                        <small class="text-danger">*ketik &lt;br&gt; untuk Enter</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Deskripsi Komisi III</td>
+                    <td>:</td>
+                    <td>
+                        <textarea rows="5" class="form-control" name="deskripsi_komisi3"><?= $akdpage->deskripsi_komisi3 ?></textarea>
+                        <small class="text-danger">*ketik &lt;br&gt; untuk Enter</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Deskripsi Komisi IV</td>
+                    <td>:</td>
+                    <td>
+                        <textarea rows="5" class="form-control" name="deskripsi_komisi4"><?= $akdpage->deskripsi_komisi4 ?></textarea>
+                        <small class="text-danger">*ketik &lt;br&gt; untuk Enter</small>
                     </td>
                 </tr>
             </table>

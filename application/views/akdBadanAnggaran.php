@@ -1,46 +1,23 @@
+<?php foreach ($akdpages as $akdpage) {
+} ?>
+
 <div id="akd">
     <section id="akd-content">
         <div class="container">
             <h1 class="text-center warna-01 m-0">BADAN ANGGARAN</h1>
-            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim etiam vel etiam aliquet aliquet sit blandit. Tellus enim arcu est placerat cras quam enim. Elementum non odio sed mattis ultrices in accumsan. Aliquet montes, sed egestas venenatis varius nullam feugiat adipiscing. Aliquet montes, sed egestas venenatis varius nullam feugiat adipiscing.</p>
-            <div class="row mt-5">
-                <div class="col-md-3">
-                    <div class="card-akd">
-                        <div class="card-akd-img">
-                            <img src="<?= base_url() ?>assets/img/man-1.png" alt="">
+            <p class="text-center"><?= $akdpage->deskripsi_badanAnggaran ?></p>
+            <div class="row mt-5 d-flex justify-content-center">
+                <?php foreach ($akdteams as $akdteam) { ?>
+                    <div class="col-md-3">
+                        <div class="card-akd">
+                            <div class="card-akd-img">
+                                <img src="<?= base_url('assets/img/akd/') . $akdteam->foto ?>" alt="">
+                            </div>
+                            <div class="card-akd-nama"><?= $akdteam->nama ?></div>
+                            <div class="card-akd-jabatan"><?= $akdteam->jabatan ?></div>
                         </div>
-                        <div class="card-akd-nama">Goerge William</div>
-                        <div class="card-akd-jabatan">Board of Director</div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card-akd">
-                        <div class="card-akd-img">
-                            <img src="<?= base_url() ?>assets/img/man-1.png" alt="">
-                        </div>
-                        <div class="card-akd-nama">Goerge William</div>
-                        <div class="card-akd-jabatan">Board of Director</div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card-akd">
-                        <div class="card-akd-img">
-                            <img src="<?= base_url() ?>assets/img/man-1.png" alt="">
-                        </div>
-                        <div class="card-akd-nama">Goerge William</div>
-                        <div class="card-akd-jabatan">Board of Director</div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card-akd">
-                        <div class="card-akd-img">
-                            <img src="<?= base_url() ?>assets/img/man-1.png" alt="">
-                        </div>
-                        <div class="card-akd-nama">Goerge William</div>
-                        <div class="card-akd-jabatan">Board of Director</div>
-                    </div>
-                </div>
-
+                <?php } ?>
             </div>
         </div>
     </section>
