@@ -1,3 +1,6 @@
+<?php foreach ($contacts as $footer) {
+} ?>
+
 <section id="footer">
     <div class="container">
         <h2 class="white-100 mb-5">DPRD Kabupaten Banggai Laut</h2>
@@ -5,55 +8,48 @@
             <div class="list-navigasi">
                 <h5>Navigasi</h5>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Fraksi</a></li>
-                    <li><a href="#">Berita</a></li>
-                    <li><a href="#">Agenda</a></li>
-                    <li><a href="#">Data & Statistik</a></li>
-                    <li><a href="#">Kontak</a></li>
-                    <li><a href="#">Tentang</a></li>
+                    <li><a href="<?= base_url('') ?>">Home</a></li>
+                    <li><a href="<?= base_url('news') ?>">News</a></li>
+                    <li><a href="<?= base_url('eDocument') ?>">e-Document</a></li>
+                    <li><a href="<?= base_url('agenda') ?>">Agenda</a></li>
+                    <li><a href="<?= base_url('contact') ?>">Contact</a></li>
+                    <li><a href="<?= base_url('tentang') ?>">Tentang</a></li>
                 </ul>
             </div>
             <div class="list-navigasi">
                 <h5>AKD</h5>
                 <ul>
-                    <li><a href="#">Badan Anggaran</a></li>
-                    <li><a href="#">Pimpinan DPRD</a></li>
-                    <li><a href="#">Bamus</a></li>
-                    <li><a href="#">Baperda</a></li>
-                    <li><a href="#">Komisi I</a></li>
-                    <li><a href="#">Komisi II</a></li>
-                    <li><a href="#">Komisi III</a></li>
-                    <li><a href="#">Komisi IV</a></li>
-                </ul>
-            </div>
-            <div class="list-navigasi">
-                <h5>e-Document</h5>
-                <ul>
-                    <li><a href="#">Produk Hukum</a></li>
+                    <li><a href="<?= base_url('akd/badanAnggaran') ?>">Badan Anggaran</a></li>
+                    <li><a href="<?= base_url('akd/pimpinanDprd') ?>">Pimpinan DPRD</a></li>
+                    <li><a href="<?= base_url('akd/badanMusyawarah') ?>">Bamus</a></li>
+                    <li><a href="<?= base_url('akd/bappeda') ?>">Bappeda</a></li>
+                    <li><a href="<?= base_url('akd/komisi1') ?>">Komisi I</a></li>
+                    <li><a href="<?= base_url('akd/komisi2') ?>">Komisi II</a></li>
+                    <li><a href="<?= base_url('akd/komisi3') ?>">Komisi III</a></li>
+                    <li><a href="<?= base_url('akd/komisi4') ?>">Komisi IV</a></li>
                 </ul>
             </div>
             <div class="list-navigasi">
                 <h5>Alamat</h5>
                 <ul>
-                    <li><a href="#">Kawasan Perkantoran Bupati Banggai Kelurahan Tombang Permai, Kecamatan Luwuk Selatan</a></li>
+                    <li><a><?= $footer->alamat ?></a></li>
                 </ul>
             </div>
             <div class="list-navigasi">
                 <h5>Kontak</h5>
                 <ul>
-                    <li><a href="#">0461 21053 - Kantor</a></li>
-                    <li><a href="#">0461 94715 - Fax</a></li>
-                    <li><a href="#">info@banggaikab.go.id</a></li>
+                    <li><a href="tel:<?= $footer->telp ?>"><?= $footer->telp ?> - Kantor</a></li>
+                    <li><a href=""><?= $footer->fax ?> - Fax</a></li>
+                    <li><a href="mailto:<?= $footer->email ?>"><?= $footer->email ?></a></li>
                 </ul>
             </div>
             <div class="list-navigasi">
                 <h5>Sosial Media</h5>
                 <ul class="social-media">
-                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="<?= $footer->facebook ?>" target="Blank"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="<?= $footer->twitter ?>" target="Blank"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="<?= $footer->youtube ?>" target="Blank"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="<?= $footer->instagram ?>" target="Blank"><i class="fa-brands fa-instagram"></i></a></li>
                 </ul>
             </div>
         </div>

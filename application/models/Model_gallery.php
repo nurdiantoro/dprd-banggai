@@ -13,6 +13,17 @@ class Model_gallery extends CI_Model
         $query = $this->db->get('gallery');
         return $query->result();
     }
+    public function readCount()
+    {
+        $query = $this->db->get('gallery');
+        return $query->num_rows();
+    }
+    public function readLimit($limit, $start)
+    {
+        $this->db->order_by('id', 'DESC');
+        $query = $this->db->get('gallery', $limit, $start);
+        return $query->result();
+    }
     public function tambah($data)
     {
         $this->db->insert('gallery', $data);

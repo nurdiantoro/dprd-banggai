@@ -1,6 +1,33 @@
+<?php foreach ($edocumentpages as $edocumentpage) {
+} ?>
 <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex justify-content-between">
-        <h6 class="m-0 font-weight-bold text-primary">e-Document</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Halaman e-Document</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <form action="<?= base_url('admin/editEdocumentPage/1') ?>" method="POST">
+                <table class="" width="100%" cellspacing="0">
+                    <tr>
+                        <td style="width: 20%;">Deskripsi</td>
+                        <td>: </td>
+                        <td>
+                            <textarea name="deskripsi" rows="10" class="form-control"><?= $edocumentpage->deskripsi ?></textarea>
+                            <small class="text-danger">*ketik &lt;br&gt; untuk Enter</small>
+                        </td>
+                    </tr>
+                </table>
+                <div>
+                    <button type="submit" class="btn btn-primary ml-auto d-block">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">Data e-Document</h6>
         <a href="<?= base_url('admin/edocument/tambah') ?>" class="btn btn-primary">Upload e-Document</a>
     </div>
     <div class="card-body">
@@ -22,7 +49,7 @@
                             <td>
                                 <form method="get" action="<?= base_url('assets/e-document/') . $doc->file ?>">
                                     <a href="<?= base_url('admin/edocument/') . $doc->id ?>" class="btn btn-sm btn-outline-primary">Edit</a>
-                                    <button type="submit" class="btn btn-sm btn-primary">Download</button>
+                                    <a href="<?= base_url('assets/e-document/') ?>" download="<?= $doc->file ?>" class="btn btn-sm btn-primary">download</a>
                                     <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" modal-id="<?= $doc->id ?>" modal-judul="<?= $doc->judul ?>">Delete</button>
                                 </form>
                             </td>

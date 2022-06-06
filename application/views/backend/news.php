@@ -54,7 +54,7 @@ foreach ($newsPages as $newsPage) {
                                         <option value="<?= $newsPage->berita_utama1 ?>"><?= $newsPage->berita_utama1 ?></option>
                                     <?php } ?>
                                     <?php foreach ($newses as $news) { ?>
-                                        <option value="<?= $news->judul ?>"><?= $news->judul ?></option>
+                                        <option value="<?= $news->id ?>"><?= $news->judul ?></option>
                                     <?php } ?>
                                 </select>
                             </td>
@@ -70,7 +70,7 @@ foreach ($newsPages as $newsPage) {
                                         <option value="<?= $newsPage->berita_utama2 ?>"><?= $newsPage->berita_utama2 ?></option>
                                     <?php } ?>
                                     <?php foreach ($newses as $news) { ?>
-                                        <option value="<?= $news->judul ?>"><?= $news->judul ?></option>
+                                        <option value="<?= $news->id ?>"><?= $news->judul ?></option>
                                     <?php } ?>
                                 </select>
                             </td>
@@ -86,24 +86,28 @@ foreach ($newsPages as $newsPage) {
                                         <option value="<?= $newsPage->berita_utama3 ?>"><?= $newsPage->berita_utama3 ?></option>
                                     <?php } ?>
                                     <?php foreach ($newses as $news) { ?>
-                                        <option value="<?= $news->judul ?>"><?= $news->judul ?></option>
+                                        <option value="<?= $news->id ?>"><?= $news->judul ?></option>
                                     <?php } ?>
                                 </select>
                             </td>
                         </tr>
 
                         <tr>
-                            <th>Banner</th>
-                            <th>: </th>
-                            <th>
+                            <td>Banner</td>
+                            <td>: </td>
+                            <td>
                                 <input type="file" class="form-control" name="banner" value="<?= $newsPage->banner ?>">
                                 <input type="hidden" class="form-control" name="banner-lama" value="<?= $newsPage->banner ?>">
-                            </th>
+                            </td>
                         </tr>
                         <tr>
-                            <th>Youtube</th>
-                            <th>: </th>
-                            <th><input type="text" class="form-control" name="youtube" value="<?= $newsPage->youtube ?>" placeholder="Masukan iframe youtube"></th>
+                            <td>Youtube</td>
+                            <td>: </td>
+                            <td>
+                                <input type="text" class="form-control" name="youtube" value="<?= $newsPage->youtube ?>" placeholder="Masukan iframe youtube">
+                                <small>contoh : https://www.youtube.com/watch?v=</small><small class="text-danger">tqMBiJg5Kss</small><br>
+                                <small>masukan yang berwarna </small><small class="text-danger">merah</small>
+                            </td>
                         </tr>
                     </table>
                     <button class="btn btn-primary text-center ml-auto mt-2 d-block" type="submit">Simpan</button>
@@ -139,7 +143,7 @@ foreach ($newsPages as $newsPage) {
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">x</button>
             </div>
             <div class="modal-body">
-                <p>Ingin mengapus news <strong class="judul text-primary">ini</strong></p>
+                <p>Ingin mengapus <strong class="judul text-primary">ini</strong><span> ?</span></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
@@ -165,7 +169,7 @@ foreach ($newsPages as $newsPage) {
         var modalJudul = exampleModal.querySelector('.judul')
         var buttonDelete = exampleModal.querySelector('.btn-delete')
 
-        modalTitle.textContent = 'New message to ' + id
+        modalTitle.textContent = 'Hapus Berita'
         modalJudul.textContent = judul
         buttonDelete.href = "<?= base_url('admin/hapusNews/') ?>" + id;
     })

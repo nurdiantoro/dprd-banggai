@@ -19,9 +19,17 @@
                     <td><input type="text" class="form-control" placeholder="Title-2" name="title-2" value="<?= $homepage->title_2 ?>"></td>
                 </tr>
                 <tr>
-                    <td>Subtitle</td>
+                    <td>Deskripsi</td>
                     <td>:</td>
                     <td><input type="text" class="form-control" placeholder="subtitle" name="subtitle" value="<?= $homepage->subtitle ?>"></td>
+                </tr>
+                <tr>
+                    <td>Background</td>
+                    <td>:</td>
+                    <td>
+                        <input class="form-control" type="file" name="background">
+                        <input class="form-control" type="hidden" name="background-lama" value="<?= $homepage->background ?>">
+                    </td>
                 </tr>
                 <tr>
                     <td>Banner</td>
@@ -46,7 +54,7 @@
     </div>
     <div class="card-body">
         <div id="home">
-            <section class="header" style="background-image:url('<?= base_url() ?>assets/img/<?= $homepage->banner ?>') ;">
+            <section class="header" style="background-image:url('<?= base_url() ?>assets/img/<?= $homepage->background ?>') ;">
                 <div class="header-content text-center">
                     <h1 class="white-100"><?= $homepage->title_1 ?></h1>
                     <h1 class="warna-01"><?= $homepage->title_2 ?></h1>

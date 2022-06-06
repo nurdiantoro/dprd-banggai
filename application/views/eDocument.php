@@ -1,7 +1,10 @@
+<?php foreach ($edocumentpages as $edocumentpage) {
+} ?>
+
 <div id="e-document">
     <div class="container">
         <h1 class="warna-01 text-center m-0">E-DOCUMENT</h1>
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim etiam vel etiam aliquet aliquet sit blandit. Tellus enim arcu est placerat cras quam enim. Elementum non odio sed mattis ultrices in accumsan. Aliquet montes, sed egestas venenatis varius nullam feugiat adipiscing. Aliquet montes, sed egestas venenatis varius nullam feugiat adipiscing.</p>
+        <p class="text-center"><?= $edocumentpage->deskripsi ?></p>
 
         <table id="example" class="table table-striped">
             <thead>
@@ -13,22 +16,17 @@
             </thead>
             <tbody>
                 <?php
-                $i = 1;
-                while ($i < 100) {
-                    $i++;
-                    echo '
-                        <tr>
-                        <td>Nama Dokumen</td>
-                        <td>22 Januari 2021</td>
+                foreach ($docs as $doc) { ?>
+                    <tr>
+                        <td><?= $doc->judul ?></td>
+                        <td><?= $doc->tanggal ?></td>
                         <td>
-                            <a href="">
+                            <a href="<?= base_url('assets/e-document/') ?>" download="<?= $doc->file ?>">
                                 <button class="btn-download">download</button>
                             </a>
                         </td>
-                        </tr>
-                    ';
-                }
-                ?>
+                    </tr>
+                <?php } ?>
 
             </tbody>
         </table>

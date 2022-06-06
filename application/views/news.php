@@ -1,22 +1,26 @@
-<?php foreach ($newsPages as $newsPage) {
-} ?>
+<?php
+foreach ($newsPages as $newsPage) {
+}
+foreach ($newses1 as $news1) {
+}
+foreach ($newses2 as $news2) {
+}
+foreach ($newses3 as $news3) {
+}
+?>
 
 <div id="news">
     <div class="container">
         <h1 class="warna-01 text-center">BERITA UTAMA</h1>
         <div class="row mb-5">
             <div class="col-md-9">
-                <a href="">
+                <a href="<?= base_url('news/detail/') . $news1->id ?>">
                     <div class="card-news card-news-lg">
-                        <div class="background-wrapper" style="background-image: url('assets/img/image-1.png') ;">
+                        <div class="background-wrapper" style="background-image: url('<?= base_url('assets/img/news/') . $news1->banner ?>') ;">
                         </div>
                         <div class="card-content">
-                            <span class="tanggal">19 Januari 2022</span>
-                            <p class="judul">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem iste tempora quod cumque
-                                saepe voluptatum unde recusandae dolorum animi aut, placeat aliquid quia illum impedit
-                                obcaecati vitae hic accusamus ratione.
-                            </p>
+                            <span class="tanggal"><?= date_format(new DateTime($news1->tanggal), 'd F Y'); ?></span>
+                            <p class="judul"><?= $news1->judul ?></p>
                         </div>
                     </div>
                 </a>
@@ -24,29 +28,25 @@
             <div class="col-md-3">
                 <div class="row h-100">
                     <div class="col-md-12 mb-4">
-                        <a href="">
+                        <a href="<?= base_url('news/detail/') . $news2->id ?>">
                             <div class="card-news card-news-sm">
-                                <div class="background-wrapper" style="background-image: url('assets/img/image-1.png') ;">
+                                <div class="background-wrapper" style="background-image: url('<?= base_url('assets/img/news/') . $news2->banner ?>') ;">
                                 </div>
                                 <div class="card-content">
-                                    <span class="tanggal">19 Januari 2022</span>
-                                    <p class="judul">
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    </p>
+                                    <span class="tanggal"><?= date_format(new DateTime($news2->tanggal), 'd F Y'); ?></span>
+                                    <p class="judul"><?= $news2->judul ?></p>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-12">
-                        <a href="">
+                    <div class="col-md-12 mb-4">
+                        <a href="<?= base_url('news/detail/') . $news3->id ?>">
                             <div class="card-news card-news-sm">
-                                <div class="background-wrapper" style="background-image: url('assets/img/image-1.png') ;">
+                                <div class="background-wrapper" style="background-image: url('<?= base_url('assets/img/news/') . $news3->banner ?>') ;">
                                 </div>
                                 <div class="card-content">
-                                    <span class="tanggal">19 Januari 2022</span>
-                                    <p class="judul">
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    </p>
+                                    <span class="tanggal"><?= date_format(new DateTime($news3->tanggal), 'd F Y'); ?></span>
+                                    <p class="judul"><?= $news3->judul ?></p>
                                 </div>
                             </div>
                         </a>
@@ -59,13 +59,12 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="row">
-                    <?php
-                    foreach ($newses as $news) {
+                    <?php foreach ($newses as $news) {
                     ?>
                         <div class="col-md-4 mb-3">
                             <div class="card-news card-news-sm">
                                 <a href="<?= base_url('news/detail/') . $news->id ?>">
-                                    <div class="background-wrapper" href="" style="background-image: url('assets/img/news/<?= $news->banner ?>') ;">
+                                    <div class="background-wrapper" href="" style="background-image: url('<?= base_url('assets/img/news/') . $news->banner ?>') ;">
                                     </div>
                                     <div class="card-content">
                                         <span class="tanggal"><?= date_format(new DateTime($news->tanggal), 'd F Y'); ?></span>
@@ -84,6 +83,7 @@
                         </div>
                     <?php } ?>
                 </div>
+                <?= $this->pagination->create_links(); ?>
             </div>
             <div class="col-md-3">
                 <div class="news-sidebar">

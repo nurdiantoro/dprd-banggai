@@ -13,6 +13,14 @@ class Model_newspage extends CI_Model
         $query = $this->db->get('newspage');
         return $query->result();
     }
+    public function readNews($id, $idberita)
+    {
+        $this->db->where('newspage.id', $id);
+        $this->db->from('newspage');
+        $this->db->join('news', 'newspage.' . $idberita . ' = news.id');
+        $query = $this->db->get();
+        return $query->result();
+    }
     public function tambah($data)
     {
         $this->db->insert('newspage', $data);

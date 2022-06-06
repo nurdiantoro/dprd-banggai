@@ -14,6 +14,12 @@ class Model_edocument extends CI_Model
         $query = $this->db->get('edocument');
         return $query->result();
     }
+    public function readPage($id)
+    {
+        $this->db->where('id', $id);
+        $query = $this->db->get('edocumentpage');
+        return $query->result();
+    }
     public function tambah($data)
     {
         $this->db->insert('edocument', $data);
@@ -23,6 +29,11 @@ class Model_edocument extends CI_Model
     {
         $this->db->where('id', $id);
         $this->db->update('edocument', $data);
+    }
+    public function editPage($id, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('edocumentpage', $data);
     }
 
     public function hapus($id)

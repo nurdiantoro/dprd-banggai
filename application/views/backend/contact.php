@@ -9,10 +9,11 @@
         <form action="<?= base_url('admin/editContact/1') ?>" method="POST" enctype="multipart/form-data">
             <table class="w-100">
                 <tr>
-                    <td>Maps</td>
+                    <td>Link Maps</td>
                     <td>:</td>
-
-                    <td><input type="text" class="form-control" name="maps" value="<?= $contact->maps ?>"></td>
+                    <td>
+                        <input type="text" class="form-control" name="maps" value="<?= $contact->maps ?>">
+                    </td>
                 </tr>
                 <tr>
                     <td>Alamat</td>
@@ -35,24 +36,36 @@
                     <td><input type="text" class="form-control" name="email" value="<?= $contact->email ?>"></td>
                 </tr>
                 <tr>
-                    <td>facebook</td>
+                    <td>Link facebook</td>
                     <td>:</td>
-                    <td><input type="text" class="form-control" name="facebook" value="<?= $contact->facebook ?>"></td>
+                    <td>
+                        <input type="text" class="form-control" name="facebook" value="<?= $contact->facebook ?>">
+                        <small>contoh : </small><small class="text-danger">https://www.facebook.com/DPRRI</small>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Twitter</td>
+                    <td>Link Twitter</td>
                     <td>:</td>
-                    <td><input type="text" class="form-control" name="twitter" value="<?= $contact->twitter ?>"></td>
+                    <td>
+                        <input type="text" class="form-control" name="twitter" value="<?= $contact->twitter ?>">
+                        <small>contoh : </small><small class="text-danger">https://twitter.com/DPR_RI</small>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Youtube</td>
+                    <td>Link Youtube</td>
                     <td>:</td>
-                    <td><input type="text" class="form-control" name="youtube" value="<?= $contact->youtube ?>"></td>
+                    <td>
+                        <input type="text" class="form-control" name="youtube" value="<?= $contact->youtube ?>">
+                        <small>contoh : </small><small class="text-danger">https://www.youtube.com/c/DPRRIOfficial</small>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Instagram</td>
+                    <td>Link Instagram</td>
                     <td>:</td>
-                    <td><input type="text" class="form-control" name="instagram" value="<?= $contact->instagram ?>"></td>
+                    <td>
+                        <input type="text" class="form-control" name="instagram" value="<?= $contact->instagram ?>">
+                        <small>contoh : </small><small class="text-danger">https://www.instagram.com/dpr_ri/</small>
+                    </td>
                 </tr>
             </table>
 
@@ -85,7 +98,6 @@
                             <td><?= $message->email ?></td>
                             <td><?= $message->pesan ?></td>
                             <td>
-                                <a href="<?= base_url('admin/message/') . $message->id ?>" class="btn btn-sm btn-outline-primary">edit</a>
                                 <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" modal-id="<?= $message->id ?>" modal-judul="<?= $message->nama ?>">Delete</button>
                             </td>
                         </tr>
@@ -105,7 +117,7 @@
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">x</button>
             </div>
             <div class="modal-body">
-                <p>Ingin mengapus news <strong class="judul text-primary">ini</strong></p>
+                <p>Hapus pesan dari <strong class="judul text-primary">ini</strong></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
@@ -131,9 +143,9 @@
         var modalJudul = exampleModal.querySelector('.judul')
         var buttonDelete = exampleModal.querySelector('.btn-delete')
 
-        modalTitle.textContent = 'New message to ' + id
+        modalTitle.textContent = 'Hapus'
         modalJudul.textContent = judul
-        buttonDelete.href = "<?= base_url('admin/hapusContactpesan/') ?>" + id;
+        buttonDelete.href = "<?= base_url('admin/hapusPesan/') ?>" + id;
     })
 
     // Datatables

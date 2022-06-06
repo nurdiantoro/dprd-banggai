@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database');
+$autoload['libraries'] = array('database', 'session');
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('model_homepage', 'model_news', 'model_newspage', 'model_edocument', 'model_agenda', 'model_gallery', 'model_about', 'model_akdpage', 'model_akdteam', 'model_contact', 'model_contactpesan', 'model_easpirasi');
+$autoload['model'] = array('model_homepage', 'model_news', 'model_newspage', 'model_edocument', 'model_agenda', 'model_gallery', 'model_about', 'model_akdpage', 'model_akdteam', 'model_contact', 'model_contactpesan', 'model_easpirasi', 'model_user', 'model_login');

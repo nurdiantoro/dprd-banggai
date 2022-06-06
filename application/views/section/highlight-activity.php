@@ -2,62 +2,25 @@
     <div class="container">
         <h1 class="text-center warna-01">HIGHLIGHT ACTIVITY</h1>
         <div class="row">
-            <div class="col-md-3">
-                <div class="card-gallery" id-gambar="image-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="background-wrapper" style="background-image: url('<?= base_url() ?>assets/img/image-4.png') ;">
-                    </div>
-                    <div class="card-content">
-                        <p class="judul">
-                            <a href="#" class="card-tag">
-                                <i class="fa-solid fa-tag"></i> Album 1
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card-gallery" id-gambar="image-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="background-wrapper" style="background-image: url('<?= base_url() ?>assets/img/image-5.png') ;">
-                    </div>
-                    <div class="card-content">
-                        <p class="judul">
-                            <a href="#" class="card-tag">
-                                <i class="fa-solid fa-tag"></i> Upacara Kegiatan
-                            </a>
-                        </p>
+            <?php foreach ($activities as $activity) { ?>
+                <div class="col-md-3">
+                    <div class="card-gallery" id-gambar="<?= $activity->file ?>" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <div class="background-wrapper" style="background-image: url('<?= base_url('assets/img/gallery/') . $activity->file ?>') ;">
+                        </div>
+                        <div class="card-content">
+                            <p class="judul">
+                                <a href="#" class="card-tag">
+                                    <i class="fa-solid fa-tag"></i> <?= $activity->judul ?>
+                                </a>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card-gallery" id-gambar="image-6" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="background-wrapper" style="background-image: url('<?= base_url() ?>assets/img/image-6.png') ;">
-                    </div>
-                    <div class="card-content">
-                        <p class="judul">
-                            <a href="#" class="card-tag">
-                                <i class="fa-solid fa-tag"></i> Upacara Kegiatan
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card-gallery" id-gambar="image-7" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="background-wrapper" style="background-image: url('<?= base_url() ?>assets/img/image-7.png') ;">
-                    </div>
-                    <div class="card-content">
-                        <p class="judul">
-                            <a href="#" class="card-tag">
-                                <i class="fa-solid fa-tag"></i> Upacara Kegiatan
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <?php } ?>
         </div>
     </div>
     <div class="text-center mt-3">
-        <a href="" class="read-more">lihat semua gallery</a>
+        <a href="<?= base_url('gallery') ?>" class="read-more">lihat semua gallery</a>
     </div>
 
     <!----------------------------------MODAL------------------------------------->

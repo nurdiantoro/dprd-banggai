@@ -202,7 +202,7 @@
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">x</button>
             </div>
             <div class="modal-body">
-                <p>Ingin mengapus <strong class="judul text-primary">ini</strong></p>
+                <p>Ingin mengapus <strong class="judul text-primary">ini</strong><span> ?</span></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
@@ -228,7 +228,7 @@
         var modalJudul = exampleModal.querySelector('.judul')
         var buttonDelete = exampleModal.querySelector('.btn-delete')
 
-        modalTitle.textContent = 'New message to ' + id
+        modalTitle.textContent = 'Hapus'
         modalJudul.textContent = judul
         buttonDelete.href = "<?= base_url('admin/hapusAkd/') ?>" + id;
     })

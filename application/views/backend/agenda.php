@@ -1,6 +1,57 @@
+<?php foreach ($agendapages as $agendapage) {
+} ?>
 <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex justify-content-between">
-        <h6 class="m-0 font-weight-bold text-primary">Agenda</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Halaman Agenda</h6>
+        <a href="<?= base_url('admin/agenda/tambah') ?>" class="btn btn-primary">Tambah Agenda</a>
+    </div>
+    <div class="card-body">
+        <form action="<?= base_url('admin/editAgendaPage/1') ?>" method="post" enctype="multipart/form-data">
+            <table class="" width="100%" cellspacing="0">
+                <tr>
+                    <td style="width: 20%;">Banner</td>
+                    <td>:</td>
+                    <td>
+                        <input type="file" name="banner" class="form-control">
+                        <input type="hidden" name="banner-lama" class="form-control" value="<?= $agendapage->banner ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Deskripsi</td>
+                    <td>:</td>
+                    <td>
+                        <textarea name="deskripsi" class="form-control" rows="5"><?= $agendapage->deskripsi ?></textarea>
+                        <small class="text-danger">*ketik &lt;br&gt; untuk Enter</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sidebar Banner</td>
+                    <td>:</td>
+                    <td>
+                        <input type="file" name="sidebar_banner" class="form-control">
+                        <input type="hidden" name="sidebar_banner-lama" class="form-control" value="<?= $agendapage->sidebar_banner ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sidebar Youtube</td>
+                    <td>:</td>
+                    <td>
+                        <input type="text" name="youtube" class="form-control" value="<?= $agendapage->youtube ?>">
+                        <small>contoh : https://www.youtube.com/watch?v=<span class="text-danger">MM2Pk8vq9Lg</span></small><br>
+                        <small>cukup copy paste yang berwarna <span class="text-danger">merah</span> saja</small>
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <button type="submit" class="btn btn-primary d-block ml-auto">submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">Data Agenda</h6>
         <a href="<?= base_url('admin/agenda/tambah') ?>" class="btn btn-primary">Tambah Agenda</a>
     </div>
     <div class="card-body">
@@ -73,7 +124,7 @@
         var modalJudul = exampleModal.querySelector('.judul')
         var buttonDelete = exampleModal.querySelector('.btn-delete')
 
-        modalTitle.textContent = 'Hapus Dokumen'
+        modalTitle.textContent = 'Hapus Agenda'
         modalJudul.textContent = judul
         buttonDelete.href = "<?= base_url('admin/hapusAgenda/') ?>" + id;
     })

@@ -10,17 +10,26 @@
                 <tr>
                     <td>Tentang DPRD Kabupaten Banggai Laut</td>
                     <td>:</td>
-                    <td width="80%"><textarea name="tentang" rows="5" class="form-control"><?= $about->tentang ?></textarea></td>
+                    <td width="80%">
+                        <textarea name="tentang" rows="5" class="form-control"><?= $about->tentang ?></textarea>
+                        <small class="text-danger">*ketik &lt;br&gt; untuk Enter</small>
+                    </td>
                 </tr>
                 <tr>
                     <td>VISI</td>
                     <td>:</td>
-                    <td><textarea name="visi" rows="5" class="form-control"><?= $about->visi ?></textarea></td>
+                    <td>
+                        <textarea name="visi" rows="5" class="form-control"><?= $about->visi ?></textarea>
+                        <small class="text-danger">*ketik &lt;br&gt; untuk Enter</small>
+                    </td>
                 </tr>
                 <tr>
                     <td>MISI</td>
                     <td>:</td>
-                    <td><textarea name="misi" rows="5" class="form-control"><?= $about->misi ?></textarea></td>
+                    <td>
+                        <textarea name="misi" rows="5" class="form-control"><?= $about->misi ?></textarea>
+                        <small class="text-danger">*ketik &lt;br&gt; untuk Enter</small>
+                    </td>
                 </tr>
             </table>
 

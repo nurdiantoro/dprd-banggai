@@ -14,10 +14,21 @@ class Model_news extends CI_Model
         $query = $this->db->get('news');
         return $query->result();
     }
-    public function readLimit($limit)
+    public function readRandom($limit)
     {
         $this->db->order_by('rand()');
         $query = $this->db->get('news', $limit);
+        return $query->result();
+    }
+    public function readCount()
+    {
+        $query = $this->db->get('news');
+        return $query->num_rows();
+    }
+    public function readLimit($limit, $start)
+    {
+        $this->db->order_by('tanggal', 'DESC');
+        $query = $this->db->get('news', $limit, $start);
         return $query->result();
     }
     public function tambah($data)

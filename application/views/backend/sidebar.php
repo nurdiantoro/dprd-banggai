@@ -1,6 +1,6 @@
 <?php
 // variable untuk tiap menu sidebar
-$index = $homepage = $akd = $news = $edocument = $agenda = $gallery = $tentang = $contact = $easpirasi = '';
+$index = $homepage = $akd = $news = $edocument = $agenda = $gallery = $tentang = $contact = $easpirasi = $manage_user = '';
 
 // logika jika ada halaman yang aktif
 if (!$this->uri->segment(2)) {
@@ -11,7 +11,7 @@ if (!$this->uri->segment(2)) {
     $akd = 'active';
 } elseif ($this->uri->segment(2) == 'news') {
     $news = 'active';
-} elseif ($this->uri->segment(2) == 'eDocument') {
+} elseif ($this->uri->segment(2) == 'edocument') {
     $edocument = 'active';
 } elseif ($this->uri->segment(2) == 'agenda') {
     $agenda = 'active';
@@ -23,6 +23,8 @@ if (!$this->uri->segment(2)) {
     $contact = 'active';
 } elseif ($this->uri->segment(2) == 'eAspirasi') {
     $easpirasi = 'active';
+} elseif ($this->uri->segment(2) == 'manage_user') {
+    $manage_user = 'active';
 }
 ?>
 <!-- Sidebar -->
@@ -105,6 +107,12 @@ if (!$this->uri->segment(2)) {
         <a class="nav-link" href="<?= base_url('admin/eAspirasi') ?>">
             <i class="fa-solid fa-file"></i>
             <span>e-Aspirasi</span>
+        </a>
+    </li>
+    <li class="nav-item <?= $manage_user; ?>">
+        <a class="nav-link" href="<?= base_url('admin/manage_user') ?>">
+            <i class="fa-solid fa-user"></i>
+            <span>Manage User</span>
         </a>
     </li>
 

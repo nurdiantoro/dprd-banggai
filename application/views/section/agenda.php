@@ -7,23 +7,16 @@
             </div>
             <div class="col-md-8">
                 <div class="owl-carousel owl-theme">
-                    <div class="item">
-                        <h2 class="warna-01">Nama Kegiatan</h2>
-                        <p>16 Januari 2022</p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus vel ipsum scelerisque eget senectus sed in at. At tristique tristique dignissim tellus sit ut rhoncus. Gravida lacus, eu posuere id nibh et placerat justo ullamcorper. Fermentum massa lacus ut a hendrerit. Morbi felis at viverra quis nibh facilisis mi amet, egestas. Molestie turpis neque metus convallis aliquet gravida natoque cursus eleifend.
-                        </p>
-                    </div>
-                    <div class="item">
-                        <h2 class="warna-01">Nama Kegiatan</h2>
-                        <p>16 Januari 2022</p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus vel ipsum scelerisque eget senectus sed in at. At tristique tristique dignissim tellus sit ut rhoncus. Gravida lacus, eu posuere id nibh et placerat justo ullamcorper. Fermentum massa lacus ut a hendrerit. Morbi felis at viverra quis nibh facilisis mi amet, egestas. Molestie turpis neque metus convallis aliquet gravida natoque cursus eleifend.
-                        </p>
-                    </div>
+                    <?php foreach ($agendas as $agenda) { ?>
+                        <div class="item">
+                            <h2 class="warna-01"><?= $agenda->judul ?></h2>
+                            <p><?= date_format(new DateTime($agenda->tanggal_mulai), 'd F Y'); ?> - <?= date_format(new DateTime($agenda->tanggal_selesai), 'd F Y'); ?></p>
+                            <p><?= $agenda->deskripsi ?></p>
+                        </div>
+                    <?php } ?>
                 </div>
                 <div class="mt-3">
-                    <a href="" class="read-more">lihat semua agenda</a>
+                    <a href="<?= base_url('agenda') ?>" class="read-more">lihat semua agenda</a>
                 </div>
             </div>
         </div>

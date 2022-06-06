@@ -202,6 +202,7 @@ button.active .icon-akd-8 {
 	padding: 0px 15px;
 	position: absolute;
 	bottom: 0;
+	width:100%;
 }
 
 .card-news .card-content .tanggal {
@@ -417,7 +418,6 @@ button.active .icon-akd-8 {
 #home .header {
 	height: 100vh !important;
 	position: relative;
-	background-image: url('img/home.png');
 	background-size: cover;
 	background-position: center;
 	display: flex;
@@ -594,6 +594,11 @@ button.active .icon-akd-8 {
 	-webkit-box-orient: vertical;
 }
 
+#news-detail {
+	background-color: var(--white-90);
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
 
 /* ------------------------------e-Document------------------------------ */
 #e-document {

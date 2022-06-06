@@ -20,7 +20,6 @@
                             <td><?= $aspirasi->email ?></td>
                             <td><?= $aspirasi->pesan ?></td>
                             <td>
-                                <a href="<?= base_url('admin/aspirasi/') . $aspirasi->id ?>" class="btn btn-sm btn-outline-primary">edit</a>
                                 <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" modal-id="<?= $aspirasi->id ?>" modal-judul="<?= $aspirasi->nama ?>">Delete</button>
                             </td>
                         </tr>
@@ -40,7 +39,7 @@
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">x</button>
             </div>
             <div class="modal-body">
-                <p>Ingin mengapus e-Aspirasi <strong class="judul text-primary">ini</strong></p>
+                <p>Hapus e-Aspirasi dari <strong class="judul text-primary">ini</strong></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
@@ -66,9 +65,9 @@
         var modalJudul = exampleModal.querySelector('.judul')
         var buttonDelete = exampleModal.querySelector('.btn-delete')
 
-        modalTitle.textContent = 'New message to ' + id
+        modalTitle.textContent = 'Hapus'
         modalJudul.textContent = judul
-        buttonDelete.href = "<?= base_url('admin/hapusContactpesan/') ?>" + id;
+        buttonDelete.href = "<?= base_url('admin/hapusEaspirasi/') ?>" + id;
     })
 
     // Datatables

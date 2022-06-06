@@ -3,6 +3,73 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {
+    //==============Function for login and manage data user===============================
+    function __construct()
+    {
+        parent::__construct();
+        if ($this->session->userdata('logged_in') !== TRUE) {
+            redirect('login');
+        }
+    }
+
+    public function manage_user()
+    {
+        $data['title'] = "Dashboard Website DPRD Kabupateng Banggai Laut";
+        $data_user['all'] = $this->model_user->readAll();
+        $this->load->view('backend/header', $data);
+        $this->load->view('backend/sidebar');
+        $this->load->view('backend/manage_user', $data_user);
+        $this->load->view('backend/footer');
+    }
+
+    public function edit_user($id)
+    {
+        $data['user'] = $this->model_user->read($id);
+        $data['title'] = "Backend - user";
+        $this->load->view('backend/header', $data);
+        $this->load->view('backend/sidebar');
+        $this->load->view('backend/userEdit', $data);
+        $this->load->view('backend/footer');
+    }
+
+    public function editUser($id)
+    {
+        $data = array(
+            'user_name' => $this->input->post('user_name'),
+            'user_email' => $this->input->post('user_email'),
+            'user_password' => md5($this->input->post('user_password')),
+        );
+
+        $this->model_user->edit($id, $data);
+        redirect(base_url('admin/manage_user'));
+    }
+
+    public function deleteUser($id)
+    {
+        $this->model_user->hapus($id);
+        redirect(base_url('admin/manage_user'));
+    }
+
+    public function add_user()
+    {
+        $data['title'] = "Backend - Add User";
+
+        $this->load->view('backend/header', $data);
+        $this->load->view('backend/sidebar');
+        $this->load->view('backend/userTambah', $data);
+        $this->load->view('backend/footer');
+    }
+
+    public function addUser()
+    {
+        $data = array(
+            'user_name' => $this->input->post('user_name'),
+            'user_email' => $this->input->post('user_email'),
+            'user_password' => md5($this->input->post('user_password')),
+        );
+        $this->model_user->tambah($data);
+        redirect(base_url('admin/manage_user'));
+    }
 
     //===================================READ===================================
     public function index()
@@ -84,6 +151,7 @@ class Admin extends CI_Controller
     public function eDocument($id)
     {
         if ($id == 'all') {
+            $data['edocumentpages'] = $this->model_edocument->readPage(1);
             $data['docs'] = $this->model_edocument->readAll();
             $data['title'] = "Backend - eDocument";
 
@@ -112,6 +180,7 @@ class Admin extends CI_Controller
     public function agenda($id)
     {
         if ($id == 'all') {
+            $data['agendapages'] = $this->model_agenda->readPage(1);
             $data['agendas'] = $this->model_agenda->readAll();
             $data['title'] = "Backend - agenda";
 
@@ -206,7 +275,7 @@ class Admin extends CI_Controller
         // wajib konfigurasi sebelum panggil fungsi $this->upload
         $config['upload_path'] = './assets/img/news';
         $config['allowed_types'] = 'jpeg|jpg|png';
-        $config['max_size'] = 2000;
+        $config['max_size'] = 20000;
         $this->load->library('upload', $config);
 
         // Foto di kirim ke folder sesuai aturan diatas
@@ -230,7 +299,7 @@ class Admin extends CI_Controller
         // wajib konfigurasi sebelum panggil fungsi $this->upload
         $config['upload_path'] = './assets/e-document/';
         $config['allowed_types'] = 'pdf|doc|docx|xls';
-        // $config['max_size'] = 2000;
+        // $config['max_size'] = 20000;
         $this->load->library('upload', $config);
 
         // Foto di kirim ke folder sesuai aturan diatas
@@ -265,7 +334,7 @@ class Admin extends CI_Controller
         // wajib konfigurasi sebelum panggil fungsi $this->upload
         $config['upload_path'] = './assets/img/gallery';
         $config['allowed_types'] = 'jpeg|jpg|png';
-        $config['max_size'] = 2000;
+        $config['max_size'] = 20000;
         $this->load->library('upload', $config);
 
         // Foto di kirim ke folder sesuai aturan diatas
@@ -287,7 +356,7 @@ class Admin extends CI_Controller
         // wajib konfigurasi sebelum panggil fungsi $this->upload
         $config['upload_path'] = './assets/img/akd';
         $config['allowed_types'] = 'jpeg|jpg|png';
-        $config['max_size'] = 2000;
+        $config['max_size'] = 20000;
         $this->load->library('upload', $config);
 
         // Foto di kirim ke folder sesuai aturan diatas
@@ -311,26 +380,28 @@ class Admin extends CI_Controller
     {
         $config['upload_path'] = './assets/img';
         $config['allowed_types'] = 'jpeg|jpg|png';
-        $config['max_size'] = 2000;
+        $config['max_size'] = 20000;
         $this->load->library('upload', $config);
 
+
         if (!$this->upload->do_upload('banner')) {
-            // $error = array('error' => $this->upload->display_errors());
-            // var_dump($error);
-            // die;
-        }
-        // Cek image diubah atau engga
-        // Kalau engga, tetep pakai yang lama
-        if ($this->upload->data('file_name') == null) {
             $banner = $this->input->post('banner-lama');
         } else {
             $banner = $this->upload->data('file_name');
+        }
+
+
+        if (!$this->upload->do_upload('background')) {
+            $background = $this->input->post('background-lama');
+        } else {
+            $background = $this->upload->data('file_name');
         }
 
         $data = array(
             'title_1' => $this->input->post('title-1'),
             'title_2' => $this->input->post('title-2'),
             'subtitle' => $this->input->post('subtitle'),
+            'background' => $background,
             'banner' => $banner,
         );
 
@@ -342,7 +413,7 @@ class Admin extends CI_Controller
     {
         $config['upload_path'] = './assets/img/news';
         $config['allowed_types'] = 'jpeg|jpg|png';
-        $config['max_size'] = 2000;
+        $config['max_size'] = 20000;
         $this->load->library('upload', $config);
 
         if (!$this->upload->do_upload('banner')) {
@@ -372,7 +443,7 @@ class Admin extends CI_Controller
     {
         $config['upload_path'] = './assets/img/news';
         $config['allowed_types'] = 'jpeg|jpg|png';
-        $config['max_size'] = 2000;
+        $config['max_size'] = 20000;
         $this->load->library('upload', $config);
 
         if (!$this->upload->do_upload('banner')) {
@@ -400,6 +471,15 @@ class Admin extends CI_Controller
         redirect(base_url('admin/news/all'));
     }
 
+    public function editEdocumentPage($id)
+    {
+        $data = array(
+            'deskripsi' => $this->input->post('deskripsi')
+        );
+
+        $this->model_edocument->editpage($id, $data);
+        redirect(base_url('admin/edocument/all'));
+    }
     public function editEdocument($id)
     {
         $data = array(
@@ -420,6 +500,34 @@ class Admin extends CI_Controller
         );
 
         $this->model_agenda->edit($id, $data);
+        redirect(base_url('admin/agenda/all'));
+    }
+    public function editAgendaPage($id)
+    {
+        $config['upload_path'] = './assets/img';
+        $config['allowed_types'] = 'jpeg|jpg|png';
+        $config['max_size'] = 20000;
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('banner')) {
+            $banner = $this->input->post('banner-lama');
+        } else {
+            $banner = $this->upload->data('file_name');
+        }
+        if (!$this->upload->do_upload('sidebar_banner')) {
+            $sidebar_banner = $this->input->post('sidebar_banner-lama');
+        } else {
+            $sidebar_banner = $this->upload->data('file_name');
+        }
+
+        $data = array(
+            'banner' => $banner,
+            'deskripsi' => $this->input->post('deskripsi'),
+            'sidebar_banner' => $sidebar_banner,
+            'youtube' => $this->input->post('youtube'),
+        );
+
+        $this->model_agenda->editPage($id, $data);
         redirect(base_url('admin/agenda/all'));
     }
 
@@ -449,7 +557,7 @@ class Admin extends CI_Controller
     {
         $config['upload_path'] = './assets/img';
         $config['allowed_types'] = 'jpeg|jpg|png';
-        $config['max_size'] = 2000;
+        $config['max_size'] = 20000;
         $this->load->library('upload', $config);
 
 
@@ -496,7 +604,7 @@ class Admin extends CI_Controller
     {
         $config['upload_path'] = './assets/img/akd';
         $config['allowed_types'] = 'jpeg|jpg|png';
-        $config['max_size'] = 2000;
+        $config['max_size'] = 20000;
         $this->load->library('upload', $config);
 
 
@@ -559,5 +667,15 @@ class Admin extends CI_Controller
     {
         $this->model_akdteam->hapus($id);
         redirect(base_url('admin/akd/all'));
+    }
+    public function hapusPesan($id)
+    {
+        $this->model_contactpesan->hapus($id);
+        redirect(base_url('admin/contact'));
+    }
+    public function hapusEaspirasi($id)
+    {
+        $this->model_easpirasi->hapus($id);
+        redirect(base_url('admin/eAspirasi'));
     }
 }
