@@ -66,6 +66,7 @@ class Admin extends CI_Controller
             'user_name' => $this->input->post('user_name'),
             'user_email' => $this->input->post('user_email'),
             'user_password' => md5($this->input->post('user_password')),
+            'user_level' => 2,
         );
         $this->model_user->tambah($data);
         redirect(base_url('admin/manage_user'));
@@ -74,12 +75,7 @@ class Admin extends CI_Controller
     //===================================READ===================================
     public function index()
     {
-        $data['title'] = "Dashboard Website DPRD Kabupateng Banggai Laut";
-
-        $this->load->view('backend/header', $data);
-        $this->load->view('backend/sidebar');
-        $this->load->view('backend/dashboard');
-        $this->load->view('backend/footer');
+        redirect(base_url('admin/homepage'));
     }
 
     public function homepage()

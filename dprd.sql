@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Jun 2022 pada 13.13
+-- Waktu pembuatan: 09 Jun 2022 pada 15.09
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -438,7 +438,7 @@ CREATE TABLE `newspage` (
 --
 
 INSERT INTO `newspage` (`id`, `banner`, `youtube`, `berita_utama1`, `berita_utama2`, `berita_utama3`) VALUES
-(1, 'image-25.png', 'tqMBiJg5Kss', '6', '8', '9');
+(1, 'image-25.png', 'tqMBiJg5Kss', '70', '20', '78');
 
 -- --------------------------------------------------------
 
@@ -459,9 +459,10 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `user_name`, `user_email`, `user_password`, `user_level`) VALUES
-(1, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '1'),
-(3, 'yusuf', 'yusuf@gmail.com', 'dd2eb170076a5dec97cdbbbbff9a4405', ''),
-(4, 'test', 'test@gmail.com', '098f6bcd4621d373cade4e832627b4f6', '');
+(1, 'Super Admin', 'super@admin.com', '17c4520f6cfd1ab53d8745e84681eb49', '1'),
+(3, 'yusuf', 'yusuf@gmail.com', 'dd2eb170076a5dec97cdbbbbff9a4405', '2'),
+(4, 'test', 'test@gmail.com', '098f6bcd4621d373cade4e832627b4f6', '2'),
+(5, 'Akun Staff', 'staff@gmail.com', '1253208465b1efa876f982d8a9e73eef', '2');
 
 --
 -- Indexes for dumped tables
@@ -649,7 +650,7 @@ ALTER TABLE `newspage`
 -- AUTO_INCREMENT untuk tabel `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

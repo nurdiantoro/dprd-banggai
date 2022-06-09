@@ -8,7 +8,7 @@
             <p class="text-center"><?= $akdpage->deskripsi_badanMusyawarah ?></p>
             <div class="row mt-5 d-flex justify-content-center">
                 <?php foreach ($akdteams as $akdteam) { ?>
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-6 mb-3">
                         <div class="card-akd">
                             <div class="card-akd-img">
                                 <img src="<?= base_url('assets/img/akd/') . $akdteam->foto ?>" alt="">

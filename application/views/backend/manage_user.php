@@ -11,7 +11,6 @@
                         <th>Id User</th>
                         <th>Username</th>
                         <th>Email</th>
-                        <th>Password</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -22,7 +21,6 @@
                             <td><?= $item->user_id ?></td>
                             <td><?= $item->user_name ?></td>
                             <td><?= $item->user_email ?></td>
-                            <td><?= $item->user_password ?></td>
                             <td>
                                 <a href="<?= base_url('admin/edit_user/') . $item->user_id ?>" class="btn btn-sm btn-outline-primary">Edit</a>
                                 <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" modal-id="<?= $item->user_id ?>" modal-judul="<?= $item->user_name ?>">Delete</button>

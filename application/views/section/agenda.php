@@ -11,7 +11,7 @@
                         <div class="item">
                             <h2 class="warna-01"><?= $agenda->judul ?></h2>
                             <p><?= date_format(new DateTime($agenda->tanggal_mulai), 'd F Y'); ?> - <?= date_format(new DateTime($agenda->tanggal_selesai), 'd F Y'); ?></p>
-                            <p><?= $agenda->deskripsi ?></p>
+                            <p class="deskripsi"><?= $agenda->deskripsi ?></p>
                         </div>
                     <?php } ?>
                 </div>

@@ -3,7 +3,7 @@
         <h1 class="text-center warna-01">HIGHLIGHT ACTIVITY</h1>
         <div class="row">
             <?php foreach ($activities as $activity) { ?>
-                <div class="col-md-3">
+                <div class="col-md-3 mb-3">
                     <div class="card-gallery" id-gambar="<?= $activity->file ?>" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <div class="background-wrapper" style="background-image: url('<?= base_url('assets/img/gallery/') . $activity->file ?>') ;">
                         </div>
@@ -53,7 +53,7 @@
             var modalGambar = exampleModal.querySelector('.modal-gambar')
             var modalJudul = exampleModal.querySelector('.modal-title')
 
-            modalGambar.src = '<?= base_url() ?>assets/img/' + namaGambar + '.png'
+            modalGambar.src = '<?= base_url() ?>assets/img/' + namaGambar
             modalJudul.innerHTML = modalTag
         })
     </script>

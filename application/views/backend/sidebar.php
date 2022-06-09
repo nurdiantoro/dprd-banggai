@@ -40,20 +40,11 @@ if (!$this->uri->segment(2)) {
         </div>
     </a>
 
-    <hr class="sidebar-divider my-0">
 
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item <?= $index; ?>">
-        <a class="nav-link" href="<?= base_url('admin') ?>">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
-    </li>
-
-    <hr class="sidebar-divider">
-
-    <div class="sidebar-heading">
-        Menu
+    <div class="sidebar-heading text-light">
+        <?= $this->session->userdata('username')  ?>
     </div>
+    <hr class="sidebar-divider my-0">
 
     <li class="nav-item <?= $homepage; ?>">
         <a class="nav-link" href="<?= base_url('admin/homepage') ?>">
@@ -109,11 +100,24 @@ if (!$this->uri->segment(2)) {
             <span>e-Aspirasi</span>
         </a>
     </li>
+
+    <?php
+    if ($this->session->userdata('level') == 1) { ?>
+        <li class="nav-item <?= $manage_user; ?>">
+            <a class="nav-link" href="<?= base_url('admin/manage_user') ?>">
+                <i class="fa-solid fa-user"></i>
+                <span>Manage User</span>
+            </a>
+        </li>
+    <?php } ?>
+
     <li class="nav-item <?= $manage_user; ?>">
-        <a class="nav-link" href="<?= base_url('admin/manage_user') ?>">
-            <i class="fa-solid fa-user"></i>
-            <span>Manage User</span>
-        </a>
+        <div class="nav-link">
+            <button type="button" class="btn btn-outline-danger bg-light w-100" data-bs-toggle="modal" data-bs-target="#logout">
+                <i class="fa-solid fa-right-from-bracket text-danger"></i>
+                <span>Logout</span>
+            </button>
+        </div>
     </li>
 
     <!-- Divider -->
@@ -125,6 +129,21 @@ if (!$this->uri->segment(2)) {
     </div>
 
 </ul>
-<!-- End of Sidebar -->
+
+<!-- Modal -->
+<div class="modal fade" id="logout" tabindex="-1" aria-labelledby="logoutLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logoutLabel">Logout</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">x</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+                <a href="<?= base_url('login/logout') ?>" type="button" class="btn btn-danger">Ya</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="w-100 m-5">

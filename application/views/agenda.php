@@ -21,7 +21,9 @@ foreach ($agendaPages as $agendaPage) {
                         <p><?= $agenda->deskripsi ?></p>
                     </div>
                 <?php } ?>
-                <?= $this->pagination->create_links(); ?>
+                <div class="mb-5">
+                    <?= $this->pagination->create_links(); ?>
+                </div>
 
             </div>
             <div class="col-md-3">
@@ -31,7 +33,7 @@ foreach ($agendaPages as $agendaPage) {
                     </div>
                     <div class="agenda-sidebar-list">
                         <?php foreach ($agendaSidebars as $agendaSidebar) { ?>
-                            <a class="agenda-sidebar-card" href="<?= base_url() ?>">
+                            <a class="agenda-sidebar-card">
                                 <div class="agenda-sidebar-card-title">
                                     <label class="warna-01"><?= $agendaSidebar->judul ?></label>
                                     <label><?= date_format(new DateTime($agendaSidebar->tanggal_mulai), 'd F Y'); ?></label>

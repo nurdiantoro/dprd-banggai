@@ -21,9 +21,9 @@ foreach ($newses3 as $news3) {
         <div class="container">
             <h1 class="warna-01 text-center">BERITA UTAMA</h1>
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-9 berita1">
                     <a href="<?= base_url('news/') . $news1->id ?>">
-                        <div class="card-news">
+                        <div class="card-news card-news-lg">
                             <div class="background-wrapper" style="background-image: url('assets/img/news/<?= $news1->banner ?>') ;">
                             </div>
                             <div class="card-content">
@@ -35,26 +35,26 @@ foreach ($newses3 as $news3) {
                 </div>
                 <div class="col-md-3">
                     <div class="row h-100">
-                        <div class="col-md-12 mb-4">
-                            <a href="<?= base_url('news/') . $news1->id ?>">
-                                <div class="card-news">
-                                    <div class="background-wrapper" style="background-image: url('assets/img/news/<?= $news1->banner ?>') ;">
+                        <div class="col-md-12 mb-4 berita2">
+                            <a href="<?= base_url('news/') . $news2->id ?>">
+                                <div class="card-news card-news-sm">
+                                    <div class="background-wrapper" style="background-image: url('assets/img/news/<?= $news2->banner ?>') ;">
                                     </div>
                                     <div class="card-content">
-                                        <span class="tanggal"><?= $news1->tanggal ?></span>
-                                        <p class="judul"><?= $news1->judul ?></p>
+                                        <span class="tanggal"><?= $news2->tanggal ?></span>
+                                        <p class="judul"><?= $news2->judul ?></p>
                                     </div>
                                 </div>
                             </a>
                         </div>
-                        <div class="col-md-12">
-                            <a href="<?= base_url('news/') . $news1->id ?>">
-                                <div class="card-news">
-                                    <div class="background-wrapper" style="background-image: url('assets/img/news/<?= $news1->banner ?>') ;">
+                        <div class="col-md-12 berita3">
+                            <a href="<?= base_url('news/') . $news3->id ?>">
+                                <div class="card-news card-news-sm">
+                                    <div class="background-wrapper" style="background-image: url('assets/img/news/<?= $news3->banner ?>') ;">
                                     </div>
                                     <div class="card-content">
-                                        <span class="tanggal"><?= $news1->tanggal ?></span>
-                                        <p class="judul"><?= $news1->judul ?></p>
+                                        <span class="tanggal"><?= $news3->tanggal ?></span>
+                                        <p class="judul"><?= $news3->judul ?></p>
                                     </div>
                                 </div>
                             </a>
