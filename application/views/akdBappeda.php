@@ -4,7 +4,7 @@
 <div id="akd">
     <section id="akd-content">
         <div class="container">
-            <h1 class="text-center warna-01 m-0">BAPPEDA</h1>
+            <h1 class="text-center warna-01 m-0">BAPEMPERDA</h1>
             <p class="text-center"><?= $akdpage->deskripsi_bappeda ?></p>
             <div class="row mt-5 d-flex justify-content-center">
                 <?php foreach ($akdteams as $akdteam) { ?>

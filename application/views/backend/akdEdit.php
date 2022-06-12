@@ -2,7 +2,7 @@
 foreach ($akdteams as $akdteam) {
 }
 
-$kosong = $badanAnggaran = $pimpinanDprd = $badanMusyawarah = $bappeda = $komisi1 = $komisi2 = $komisi3 = $komisi4 = '';
+$kosong = $badanAnggaran = $pimpinanDprd = $badanMusyawarah = $bapemperda = $komisi1 = $komisi2 = $komisi3 = $komisi4 = '';
 if ($akdteam->kategori == '') {
     $kosong = 'selected';
 } elseif ($akdteam->kategori == 'Badan Anggaran') {
@@ -11,8 +11,8 @@ if ($akdteam->kategori == '') {
     $pimpinanDprd = 'selected';
 } elseif ($akdteam->kategori == 'Badan Musyawarah') {
     $badanMusyawarah = 'selected';
-} elseif ($akdteam->kategori == 'BAPPEDA') {
-    $bappeda = 'selected';
+} elseif ($akdteam->kategori == 'BAPEMPERDA') {
+    $bapemperda = 'selected';
 } elseif ($akdteam->kategori == 'Komisi I') {
     $komisi1 = 'selected';
 } elseif ($akdteam->kategori == 'Komisi II') {
@@ -60,7 +60,7 @@ if ($akdteam->kategori == '') {
                             <option <?= $badanAnggaran ?> value="Badan Anggaran">Badan Anggaran</option>
                             <option <?= $pimpinanDprd ?> value="Pimpinan DPRD">Pimpinan DPRD</option>
                             <option <?= $badanMusyawarah ?> value="Badan Musyawarah">Badan Musyawarah</option>
-                            <option <?= $bappeda ?> value="BAPPEDA">BAPPEDA</option>
+                            <option <?= $bapemperda ?> value="BAPEMPERDA">BAPEMPERDA</option>
                             <option <?= $komisi1 ?> value="Komisi I">Komisi I</option>
                             <option <?= $komisi2 ?> value="Komisi II">Komisi II</option>
                             <option <?= $komisi3 ?> value="Komisi III">Komisi III</option>

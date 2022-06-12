@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Jun 2022 pada 15.09
+-- Waktu pembuatan: 12 Jun 2022 pada 07.59
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -132,7 +132,7 @@ CREATE TABLE `akdpage` (
 --
 
 INSERT INTO `akdpage` (`id`, `banner`, `deskripsi`, `image`, `deskripsi_badanAnggaran`, `deskripsi_pimpinanDprd`, `deskripsi_badanMusyawarah`, `deskripsi_bappeda`, `deskripsi_komisi1`, `deskripsi_komisi2`, `deskripsi_komisi3`, `deskripsi_komisi4`) VALUES
-(1, 'image-21.png', 'Lorem ipsum dolor sit amet, co nsectetu r adipiscin g elit. Tempor pretium dictum mi bibendu m risus. Arcu fames integer lacus, tristique varius amet dignissi m integer at. Scele risque bibendu m conse ctetur proin libero vitae, m alesuad a sceleri sque urna, in. Tempus nulla quisque tincidunt posuere duis euismod sollicitu din ut nunc. Viverra ornare faucibus in facilisis pellente sque venenati s malesu ada. <br> <br> Phasellu s a semper mauris morbi sit sit nunc orci blandit. Pulvinar pellente squenon ulla mcorper condim entum in nunc interdu m non a. Sed lorem cursus luctus gravida sem bib endum. Nulla eu sit neque morbi cursus amet, ornare eu. Iaculis eget in enim eget vitae diam. Ultricies pellente sque at gravida est varius nulla neque, urna. Id sem arcu tortor mi pellente sque leo, eu posuere. Tincidun t blandit nisl posuere purus vitae leo. Tincidun t egestas ultrices non feugiat neque odio quis fer mentum . Volutpat , ullamc orper fringilla facilisi sed arcu ut in imperdiet. Sit ferm entum sagittis, ', 'Kabupaten-Banggai-Laut1.png', 'Deskripsi Badan Anggaran', 'Deskripsi Pimpinan DPRD', 'Deskripsi Badan Musyawarah', 'Deskripsi BAPPEDA', 'Deskripsi Komisi I', 'Deskripsi Komisi II', 'Deskripsi Komisi III', 'Deskripsi Komisi IV');
+(1, 'image-21.png', 'Lorem ipsum dolor sit amet, co nsectetu r adipiscin g elit. Tempor pretium dictum mi bibendu m risus. Arcu fames integer lacus, tristique varius amet dignissi m integer at. Scele risque bibendu m conse ctetur proin libero vitae, m alesuad a sceleri sque urna, in. Tempus nulla quisque tincidunt posuere duis euismod sollicitu din ut nunc. Viverra ornare faucibus in facilisis pellente sque venenati s malesu ada. <br> <br> Phasellu s a semper mauris morbi sit sit nunc orci blandit. Pulvinar pellente squenon ulla mcorper condim entum in nunc interdu m non a. Sed lorem cursus luctus gravida sem bib endum. Nulla eu sit neque morbi cursus amet, ornare eu. Iaculis eget in enim eget vitae diam. Ultricies pellente sque at gravida est varius nulla neque, urna. Id sem arcu tortor mi pellente sque leo, eu posuere. Tincidun t blandit nisl posuere purus vitae leo. Tincidun t egestas ultrices non feugiat neque odio quis fer mentum . Volutpat , ullamc orper fringilla facilisi sed arcu ut in imperdiet. Sit ferm entum sagittis, ', 'Kabupaten-Banggai-Laut1.png', 'Deskripsi Badan Anggaran', 'Deskripsi Pimpinan DPRD', 'Deskripsi Badan Musyawarah', 'Deskripsi Bapemperda', 'Deskripsi Komisi I', 'Deskripsi Komisi II', 'Deskripsi Komisi III', 'Deskripsi Komisi IV');
 
 -- --------------------------------------------------------
 
@@ -155,7 +155,7 @@ CREATE TABLE `akdteam` (
 INSERT INTO `akdteam` (`id`, `kategori`, `nama`, `jabatan`, `foto`) VALUES
 (2, 'Badan Anggaran', 'Nama Pimpinan DPRD', 'Jabatan Pimpinan DPRD', 'man-2.png'),
 (3, 'Badan Anggaran', 'Nama Badan Musyawarah', 'Jabatan Badan Musyawarah', 'woman-1.png'),
-(4, 'BAPPEDA', 'Nama Bappeda', 'Jabatan Bappeda', 'woman-2.png'),
+(4, 'BAPEMPERDA', 'Nama Bapemperda', 'Jabatan Bapemperda', 'woman-2.png'),
 (5, 'Komisi I', 'Nama Komisi I', 'Jabatan Komisi I', 'man-12.png'),
 (6, 'Komisi II', 'Nama Komisi II', 'Jabatan Komisi II', 'man-21.png'),
 (7, 'Komisi III', 'Nama Komisi III', 'Jabatan Komisi III', 'woman-11.png'),

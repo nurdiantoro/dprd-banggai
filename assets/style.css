@@ -126,14 +126,12 @@ button.active .icon-akd-8 {
 }
 
 .card-news {
-	height: 100% !important;
+	height: 100%;
 	display: flex;
 	justify-content: flex-start;
 	border: none !important;
 	overflow: hidden;
 	position: relative;
-	/* min-height: 175px; */
-	height: 100%;
 	transition: 1000ms ease;
 }
 
@@ -151,7 +149,7 @@ button.active .icon-akd-8 {
 }
 
 .card-news-lg .background-wrapper {
-	min-height: 100%;
+	height: 100% !important;
 }
 
 .card-news-sm .judul {
@@ -167,6 +165,7 @@ button.active .icon-akd-8 {
 	width: 100%;
 	background-size: cover;
 	transition: 1000ms ease;
+	display: block;
 }
 
 .card-news:hover {
@@ -454,6 +453,7 @@ button.active .icon-akd-8 {
 	justify-content: center;
 	align-items: center;
 	max-width: 60%;
+	text-align: center;
 }
 
 #home #agenda {
@@ -953,20 +953,32 @@ button.active .icon-akd-8 {
 /* ----------------------------------RESPONSIVE MOBILE---------------------------------- */
 
 @media (max-width: 576px) {
+	h1 {
+		font-size: 1.75em !important;
+	}
+
+	h2 {
+		font-size: 1.25em !important;
+	}
+
 	#home .header-content {
 		text-align: left !important;
 		max-width: 100%;
 		padding: 0 1em;
+		align-items: flex-start;
 	}
 
 	#home .header-content h1 {
 		margin-bottom: 0 !important;
 	}
 
-	#home .berita1,
+	#home .berita1 {
+		margin-bottom: 0;
+	}
+
 	#home .berita2,
 	#home .berita3 {
-		margin-bottom: 2em !important;
+		margin-bottom: 1.75em !important;
 	}
 
 	#agenda-section {
@@ -977,12 +989,22 @@ button.active .icon-akd-8 {
 		padding: 50px 5px;
 	}
 
-	#investigasi .card-news {
+	.card-news {
 		margin-bottom: 1em;
 		flex-direction: column;
+		position: relative;
 	}
 
-	#investigasi .card-news .card-content {
+	.card-news.card-news-lg .background-wrapper {
+		height: 200px !important;
+	}
+
+	.card-news .background-wrapper {
+		height: 90px;
+		border-radius: 5px;
+	}
+
+	.card-news .card-content {
 		position: relative;
 		padding: 0;
 		background-image: none;
@@ -990,7 +1012,7 @@ button.active .icon-akd-8 {
 		flex-direction: column-reverse;
 	}
 
-	#investigasi .card-news .card-content .judul {
+	.card-news .card-content .judul {
 		margin-bottom: 0;
 		color: var(--black-60);
 
@@ -1002,7 +1024,7 @@ button.active .icon-akd-8 {
 		-webkit-box-orient: vertical;
 	}
 
-	#investigasi .card-news .card-content .tanggal {
+	.card-news .card-content .tanggal {
 		padding: 0;
 		background-color: unset;
 		color: var(--black-30);
@@ -1056,12 +1078,24 @@ button.active .icon-akd-8 {
 
 	/* --------------Footer-------------- */
 	#footer .footer-navigasi {
-		flex-direction: column;
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 
 	#footer .list-navigasi {
-		width: 100%;
+		/* width: 100%; */
 		margin-bottom: 2em;
+	}
+
+	#footer .list-navigasi.footer-navbar,
+	#footer .list-navigasi.footer-akd {
+		width: 50%;
+	}
+
+	#footer .list-navigasi.footer-alamat,
+	#footer .list-navigasi.footer-kontak,
+	#footer .list-navigasi.footer-socialmedia {
+		width: 100%;
 	}
 
 	#footer .list-navigasi ul li {
@@ -1081,12 +1115,13 @@ button.active .icon-akd-8 {
 		flex-direction: column;
 		justify-content: center;
 	}
+
 	#visi-misi .visi-misi::before {
-	height: 0.05em;
-	width: 100%;
-	top: 50%;
-	left: 0;
-	right: 0;
+		height: 0.05em;
+		width: 100%;
+		top: 50%;
+		left: 0;
+		right: 0;
 	}
 
 	#visi-misi .visi {
@@ -1099,7 +1134,7 @@ button.active .icon-akd-8 {
 		width: 100%;
 	}
 
-	#tentang .form-aspirasi{
+	#tentang .form-aspirasi {
 		width: 100%;
 		margin: 0;
 	}

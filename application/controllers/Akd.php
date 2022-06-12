@@ -65,15 +65,15 @@ class Akd extends CI_Controller
         $this->load->view('footer', $data);
     }
 
-    public function bappeda()
+    public function bapemperda()
     {
         $data['akdpages'] = $this->model_akdpage->read(1);
-        $data['akdteams'] = $this->model_akdteam->readKategori('BAPPEDA');
+        $data['akdteams'] = $this->model_akdteam->readKategori('BAPEMPERDA');
         $data['contacts'] = $this->model_contact->read(1);
         $data['agendas'] = $this->model_agenda->readLimit(4, 0);
         $data['newsesLainnya'] = $this->model_news->readRandom(4);
         $data['activities'] = $this->model_gallery->readLimit(4, 0);
-        $data['title'] = "BAPPEDA";
+        $data['title'] = "BAPEMPERDA";
         $data['akdList'] = "bappeda";
 
         $this->load->view('header', $data);

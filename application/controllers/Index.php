@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Index extends CI_Controller
 {
 
-    public function index()
+    public function _remap()
     {
         $data['newses1'] = $this->model_newspage->readNews(1, 'berita_utama1');
         $data['newses2'] = $this->model_newspage->readNews(1, 'berita_utama2');

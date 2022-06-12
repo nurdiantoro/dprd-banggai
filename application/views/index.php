@@ -11,7 +11,7 @@ foreach ($newses3 as $news3) {
 
 <div id="home">
     <section class="header" style="background-image: url('<?= base_url('assets/img/') . $homepage->background ?>');">
-        <div class="header-content text-center">
+        <div class="header-content">
             <h1 class="white-100"><?= $homepage->title_1 ?></h1>
             <h1 class="warna-01"><?= $homepage->title_2 ?></h1>
             <P class="white-100 "><?= $homepage->subtitle ?></P>
@@ -22,7 +22,7 @@ foreach ($newses3 as $news3) {
             <h1 class="warna-01 text-center">BERITA UTAMA</h1>
             <div class="row">
                 <div class="col-md-9 berita1">
-                    <a href="<?= base_url('news/') . $news1->id ?>">
+                    <a href="<?= base_url('news/detail/') . $news1->id ?>">
                         <div class="card-news card-news-lg">
                             <div class="background-wrapper" style="background-image: url('assets/img/news/<?= $news1->banner ?>') ;">
                             </div>
@@ -35,8 +35,8 @@ foreach ($newses3 as $news3) {
                 </div>
                 <div class="col-md-3">
                     <div class="row h-100">
-                        <div class="col-md-12 mb-4 berita2">
-                            <a href="<?= base_url('news/') . $news2->id ?>">
+                        <div class="col-md-12 col-6 mb-4 berita2">
+                            <a href="<?= base_url('news/detail/') . $news2->id ?>">
                                 <div class="card-news card-news-sm">
                                     <div class="background-wrapper" style="background-image: url('assets/img/news/<?= $news2->banner ?>') ;">
                                     </div>
@@ -47,8 +47,8 @@ foreach ($newses3 as $news3) {
                                 </div>
                             </a>
                         </div>
-                        <div class="col-md-12 berita3">
-                            <a href="<?= base_url('news/') . $news3->id ?>">
+                        <div class="col-md-12 col-6 berita3">
+                            <a href="<?= base_url('news/detail/') . $news3->id ?>">
                                 <div class="card-news card-news-sm">
                                     <div class="background-wrapper" style="background-image: url('assets/img/news/<?= $news3->banner ?>') ;">
                                     </div>

@@ -24,7 +24,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/dprd-banggai/';
-// $config['base_url'] = 'https://dprd.turut-mengundang.com/';
+// $config['base_url'] = 'http://dprd.turut-mengundang.com/';
 
 
 /*

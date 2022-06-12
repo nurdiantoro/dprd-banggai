@@ -1,13 +1,13 @@
 <?php
-$badanAnggaran = $pimpinanDprd = $badanMusyawarah = $bappeda = $komisi1 = $komisi2 = $komisi3 = $komisi4 = '';
+$badanAnggaran = $pimpinanDprd = $badanMusyawarah = $bapemperda = $komisi1 = $komisi2 = $komisi3 = $komisi4 = '';
 if ($this->uri->segment(2) == 'badanAnggaran') {
     $badanAnggaran = 'active';
 } elseif ($this->uri->segment(2) == 'pimpinanDprd') {
     $pimpinanDprd = 'active';
 } elseif ($this->uri->segment(2) == 'badanMusyawarah') {
     $badanMusyawarah = 'active';
-} elseif ($this->uri->segment(2) == 'bappeda') {
-    $bappeda = 'active';
+} elseif ($this->uri->segment(2) == 'bapemperda') {
+    $bapemperda = 'active';
 } elseif ($this->uri->segment(2) == 'komisi1') {
     $komisi1 = 'active';
 } elseif ($this->uri->segment(2) == 'komisi2') {
@@ -48,10 +48,10 @@ if ($this->uri->segment(2) == 'badanAnggaran') {
                 </a>
             </div>
             <div class="col-md-3 mb-3">
-                <a href="<?= base_url() ?>akd/bappeda">
-                    <button class="btn-akd-list <?= $bappeda ?>">
+                <a href="<?= base_url() ?>akd/bapemperda">
+                    <button class="btn-akd-list <?= $bapemperda ?>">
                         <i class="icon icon-akd-4"></i>
-                        <span>BAPPEDA</span>
+                        <span>BAPEMPERDA</span>
                     </button>
                 </a>
             </div>

@@ -21,7 +21,7 @@ if (!$this->uri->segment(2)) {
     $tentang = 'active';
 } elseif ($this->uri->segment(2) == 'contact') {
     $contact = 'active';
-} elseif ($this->uri->segment(2) == 'eAspirasi') {
+} elseif ($this->uri->segment(2) == 'easpirasi') {
     $easpirasi = 'active';
 } elseif ($this->uri->segment(2) == 'manage_user') {
     $manage_user = 'active';
@@ -95,7 +95,7 @@ if (!$this->uri->segment(2)) {
         </a>
     </li>
     <li class="nav-item <?= $easpirasi; ?>">
-        <a class="nav-link" href="<?= base_url('admin/eAspirasi') ?>">
+        <a class="nav-link" href="<?= base_url('admin/easpirasi') ?>">
             <i class="fa-solid fa-file"></i>
             <span>e-Aspirasi</span>
         </a>

@@ -97,10 +97,10 @@ $db['default'] = array(
 
 // $db['default'] = array(
 // 	'dsn'	=> '',
-// 	'hostname' => 'turut-mengundang.com',
-// 	'username' => 'dprdbanggai',
-// 	'password' => 'dprdbanggai',
-// 	'database' => 'dprd',
+// 	'hostname' => 'localhost',
+// 	'username' => 'turutmengundang_dprdbanggai',
+// 	'password' => 'dprdbanggai123',
+// 	'database' => 'turutmengundang_db_dprd',
 // 	'dbdriver' => 'mysqli',
 // 	'dbprefix' => '',
 // 	'pconnect' => FALSE,

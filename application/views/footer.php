@@ -5,7 +5,7 @@
     <div class="container">
         <h2 class="white-100 mb-5">DPRD Kabupaten Banggai Laut</h2>
         <div class="footer-navigasi">
-            <div class="list-navigasi">
+            <div class="list-navigasi footer-navbar">
                 <h5>Navigasi</h5>
                 <ul>
                     <li><a href="<?= base_url('') ?>">Home</a></li>
@@ -16,26 +16,26 @@
                     <li><a href="<?= base_url('tentang') ?>">Tentang</a></li>
                 </ul>
             </div>
-            <div class="list-navigasi">
+            <div class="list-navigasi footer-akd">
                 <h5>AKD</h5>
                 <ul>
                     <li><a href="<?= base_url('akd/badanAnggaran') ?>">Badan Anggaran</a></li>
                     <li><a href="<?= base_url('akd/pimpinanDprd') ?>">Pimpinan DPRD</a></li>
-                    <li><a href="<?= base_url('akd/badanMusyawarah') ?>">Bamus</a></li>
-                    <li><a href="<?= base_url('akd/bappeda') ?>">Bappeda</a></li>
+                    <li><a href="<?= base_url('akd/badanMusyawarah') ?>">Badan Musyawarah</a></li>
+                    <li><a href="<?= base_url('akd/bapemperda') ?>">BAPEMPERDA</a></li>
                     <li><a href="<?= base_url('akd/komisi1') ?>">Komisi I</a></li>
                     <li><a href="<?= base_url('akd/komisi2') ?>">Komisi II</a></li>
                     <li><a href="<?= base_url('akd/komisi3') ?>">Komisi III</a></li>
                     <li><a href="<?= base_url('akd/komisi4') ?>">Komisi IV</a></li>
                 </ul>
             </div>
-            <div class="list-navigasi">
+            <div class="list-navigasi footer-alamat">
                 <h5>Alamat</h5>
                 <ul>
                     <li><a><?= $footer->alamat ?></a></li>
                 </ul>
             </div>
-            <div class="list-navigasi">
+            <div class="list-navigasi footer-kontak">
                 <h5>Kontak</h5>
                 <ul>
                     <li><a href="tel:<?= $footer->telp ?>"><?= $footer->telp ?> - Kantor</a></li>
@@ -43,7 +43,7 @@
                     <li><a href="mailto:<?= $footer->email ?>"><?= $footer->email ?></a></li>
                 </ul>
             </div>
-            <div class="list-navigasi">
+            <div class="list-navigasi footer-socialmedia">
                 <h5>Sosial Media</h5>
                 <ul class="social-media">
                     <li><a href="<?= $footer->facebook ?>" target="Blank"><i class="fa-brands fa-facebook"></i></a></li>

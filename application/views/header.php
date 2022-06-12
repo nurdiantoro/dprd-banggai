@@ -26,7 +26,7 @@
 
 <body>
     <?php
-    $home = $akd = $akd2 = $badanAnggaran = $pimpinanDprd = $badanMusyawarah = $bappeda = $komisi1 = $komisi2 = $komisi3 = $komisi4 = $news = $eDocument = $agenda = $gallery = $tentang = $contact = '';
+    $home = $akd = $akd2 = $badanAnggaran = $pimpinanDprd = $badanMusyawarah = $bapemperda = $komisi1 = $komisi2 = $komisi3 = $komisi4 = $news = $eDocument = $agenda = $gallery = $tentang = $contact = '';
     if (!$this->uri->segment(1)) {
         $home = 'active';
     } elseif ($this->uri->segment(1) == 'akd') {
@@ -39,8 +39,8 @@
             $pimpinanDprd = 'active';
         } elseif ($this->uri->segment(2) == 'badanMusyawarah') {
             $badanMusyawarah = 'active';
-        } elseif ($this->uri->segment(2) == 'bappeda') {
-            $bappeda = 'active';
+        } elseif ($this->uri->segment(2) == 'bapemperda') {
+            $bapemperda = 'active';
         } elseif ($this->uri->segment(2) == 'komisi1') {
             $komisi1 = 'active';
         } elseif ($this->uri->segment(2) == 'komisi2') {
@@ -83,7 +83,7 @@
                             <li><a class="dropdown-item <?= $badanAnggaran ?>" href="<?= base_url('') ?>akd/badanAnggaran">Badan Anggaran</a></li>
                             <li><a class="dropdown-item <?= $pimpinanDprd ?>" href="<?= base_url('') ?>akd/pimpinanDprd">Pimpinan DPRD</a></li>
                             <li><a class="dropdown-item <?= $badanMusyawarah ?>" href="<?= base_url('') ?>akd/badanMusyawarah">Badan Musyawarah</a></li>
-                            <li><a class="dropdown-item <?= $bappeda ?>" href="<?= base_url('') ?>akd/bappeda">BAPPEDA</a></li>
+                            <li><a class="dropdown-item <?= $bapemperda ?>" href="<?= base_url('') ?>akd/bapemperda">BAPEMPERDA</a></li>
                             <li><a class="dropdown-item <?= $komisi1 ?>" href="<?= base_url('') ?>akd/komisi1">Komisi I</a></li>
                             <li><a class="dropdown-item <?= $komisi2 ?>" href="<?= base_url('') ?>akd/komisi2">Komisi II</a></li>
                             <li><a class="dropdown-item <?= $komisi3 ?>" href="<?= base_url('') ?>akd/komisi3">Komisi III</a></li>
@@ -91,7 +91,7 @@
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link <?= $news ?>" href="<?= base_url('') ?>news">News</a></li>
-                    <li class="nav-item"><a class="nav-link <?= $eDocument ?>" href="<?= base_url('') ?>eDocument">e-Document</a></li>
+                    <li class="nav-item"><a class="nav-link <?= $eDocument ?>" href="<?= base_url('') ?>edocument">e-Document</a></li>
                     <li class="nav-item"><a class="nav-link <?= $agenda ?>" href="<?= base_url('') ?>agenda">Agenda</a></li>
                     <li class="nav-item"><a class="nav-link <?= $gallery ?>" href="<?= base_url('') ?>gallery">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link <?= $tentang ?>" href="<?= base_url('') ?>tentang">Tentang</a></li>

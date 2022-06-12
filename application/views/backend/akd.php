@@ -108,7 +108,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Deskripsi BAPPEDA</td>
+                    <td>Deskripsi BAPEMPERDA</td>
                     <td>:</td>
                     <td>
                         <textarea rows="5" class="form-control" name="deskripsi_bappeda"><?= $akdpage->deskripsi_bappeda ?></textarea>
@@ -159,8 +159,8 @@
 <!-- Table -->
 <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex justify-content-between align-items2-center">
-        <h6 class="m-0 font-weight-bold text-primary">Team</h6>
-        <a href="<?= base_url('admin/akd/tambah') ?>" class="btn btn-primary">Tambah Team</a>
+        <h6 class="m-0 font-weight-bold text-primary">Anggota</h6>
+        <a href="<?= base_url('admin/akd/tambah') ?>" class="btn btn-primary">Tambah Anggota</a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
